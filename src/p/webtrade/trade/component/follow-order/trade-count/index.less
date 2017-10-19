@@ -1,0 +1,55 @@
+#J_TradeCount .trade-count-inner{
+	.data-bd{
+		div{
+			padding: 4px 15px;
+			.item{
+				display: inline-block;
+				width: 22%;
+			}
+			.left{
+				float: left;
+			}
+			.right{
+				float: right;
+			}
+			.desc{
+				width: 84px;
+			}
+			.trade-profit,
+			.max-trade-profit,
+			.max-trade-loss {
+				.num{
+					color: #6BA583;
+				}
+				&.up{
+					.num{
+						color: #D75442;
+					}
+				}
+			}
+		}
+	}
+	.trade-count-charts-wrapper{
+		.trade-count-charts-inner{
+			position: relative;
+			padding: 10px 25px;
+			// padding: 10px 10px 20px 0;
+			.chart-data-desc{
+				position: absolute;
+				z-index: 1;
+				width: 14px;
+				height: 14px;
+				border-radius: 50%;
+				background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozRkU0M0Q1MkExQ0MxMUU3QTQ4QjgwOEU0QzUwNEM0MyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozRkU0M0Q1M0ExQ0MxMUU3QTQ4QjgwOEU0QzUwNEM0MyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNGRTQzRDUwQTFDQzExRTdBNDhCODA4RTRDNTA0QzQzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNGRTQzRDUxQTFDQzExRTdBNDhCODA4RTRDNTA0QzQzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+AQiU8QAAAU9JREFUeNqklDFLA0EQhfeWEAgcCPkLVlb5BSksUthE7MTKQoI2Svo7m+tsJEFIiE0KCaSw0MYiFsJZ2vhHIkhAuCLxjbyFzbjXJA8+jrt5M+zuzWyUJIlRqoMOaAELViACSzADIzB35izLTEUVuACnoAcOwcKLxaANXsAYDFzAeqZb0ABNMFEFDN8njDfoXysiK6iBc1B4ibvgnklOBX015v1tp84tNM1/HYEz8AU+VewS5GmaTis8xJ5agZMc4jd4DMQK5nUs/8KzCesO3IC9krjktSzPZVFiugY73HZIkmddH2yjlWUjbaPIshPjDQtI3tKyldsbFpG8meVvvALVgOlYPX1VmTeyHCaZhX7A+Ar2wUMgJv4xBnDu2l6G6QcM1Yo+wBt4VysY0j/QA9hla+fgJHDYMb/n9HVdQDeRVJ5yFJ5K7pMD/z4R/QowADdvSzKAu/rIAAAAAElFTkSuQmCC) no-repeat 0 0;
+				background-size: 100% auto;
+				top: 7px;
+				right: 35px;
+				cursor: pointer;
+			}
+			.trade-count-chart{
+				height: 175px;
+				margin-bottom: 1px;
+			}
+		}
+	}
+}

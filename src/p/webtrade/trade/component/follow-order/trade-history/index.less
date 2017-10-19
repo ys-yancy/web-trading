@@ -1,0 +1,72 @@
+.trade-current-inner{
+	width: 100%;
+	font-size: 0.75rem;
+	table{
+		width: 100%;
+		tr{
+			td{
+				width: 25%;
+				height: 96px;
+			}
+			&:nth-child(2n) {
+				background: #F2F3F7;
+			}
+			&:nth-child(2n+1) {
+				background: #fff;
+			}
+		}
+		.no-list{
+			text-align: center;
+		}
+	}
+	.name-wrapper{
+		padding-left: 24px;
+		padding-right: 10px;
+		.tag{
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			top: 44px;
+			left: 9px;
+			border-radius: 50%;
+			background: #6BA583;
+			&.up{
+				background: #D75442;
+			}
+		}
+		.name{
+			width: 76px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.symbol{
+			font-size: 0.75rem;
+		}
+	}
+	.detail,
+	.name-wrapper{
+		position: relative;
+		.trade-current-top,
+		.trade-current-bottom{
+			position: absolute;
+			&.trade-current-top{
+				top: 5px;
+				left: 0px;
+			}
+			&.trade-current-bottom{
+				left: 0px;
+				bottom: 5px;
+			}
+			.J_TradeProfit{
+				color: #6BA583;
+				&.up{
+					color: #D75442;
+				}
+			}
+		}
+		&.pro-val>div{
+			padding-left: 12px;
+		}
+	}
+}

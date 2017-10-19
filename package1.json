@@ -1,0 +1,43 @@
+{
+  "name": "invheroApp",
+  "version": "2.0.0",
+  "main": "electronAppMain.js",
+  "dependencies": {
+    "babel-core": "^6.9.0",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "css-loader": "^0.23.1",
+    "ejs-loader": "^0.2.1",
+    "enhanced-resolve": "^3.3.0",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "file-loader": "~0.9.0",
+    "object.values": "^1.0.3",
+    "style-loader": "^0.13.1",
+    "tapable": "^0.2.6",
+    "url-loader": "~0.5.7",
+    "watchpack": "^1.3.1",
+    "webpack": "^2.7.0",
+    "webpack-dev-server": "^2.5.1",
+    "webpack-validator": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.9.0",
+    "file-loader": "~0.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --max_old_space_size=4096 node_modules/webpack/bin/webpack.js --watch",
+    "dev": "webpack-dev-server --host 0.0.0.0  --devtool eval --progress --colors --hot --content-base ./",
+    "electron:start": "electron .",
+    "package:win:32": "electron-packager ./ app --win --out outApp --arch=ia32 --electronVersion 1.0.0 --overwrite --ignore=node_modules --ignore=outPut --version-string.CompanyName=invhero --version-string.ProductName=invhero --asar=true --icon=./favicon.ico",
+    "package:win:64": "electron-packager ./ app app --win --out outApp --arch=x64 --electronVersion 1.0.0 --overwrite --ignore=node_modules --ignore=outPut --version-string.CompanyName=invhero --version-string.ProductName=invhero --asar=true --icon=./favicon.ico",
+    "package:mac": "electron-packager ./ app app --darwin --out outApp --arch=x64 --electronVersion 1.0.0 --overwrite --ignore=node_modules --ignore=outPut --version-string.CompanyName=invhero --version-string.ProductName=invhero --asar=true"
+  },
+  "author": "Invhero",
+  "license": "ISC",
+  "description": ""
+}

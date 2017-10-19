@@ -1,0 +1,26 @@
+<% data.forEach(function(item) {%>
+  <tr data-symbol="<%= item.policy.symbol.replace(/\./g, '--') %>" class="J_OptionItem <%= item.up ? 'up' : '' %> J_Hover">
+    <td class="name">
+      <p class="set-more-symbolname">
+        <%= item.policy.name %>
+      </p>
+      <p class="symbol-val">
+        <%= item.policy.symbol %>
+      </p>
+    </td>
+    <td class="bid-price">
+      <span class="J_BidPriceInt"><%= item.quote.subBid.str %></span><span class="strong J_BidPriceFloat"><%= item.quote.subBid.substr %></span>
+    </td>
+    <td class="ask-price">
+      <span class="J_AskPriceInt"><%= item.quote.subAsk.str %></span><span class="strong J_AskPriceFloat"><%= item.quote.subAsk.substr %></span>
+    </td>
+    <td class="status <%= item.tag ? 'disabled' : '' %> <%= item.className %>" data-rate="<%= item.rate %>" data-rateval="<%= item.rateVal %>">
+      <% if (item.tag) {%>
+        <span class="status-val"><%= item.tag %></span>
+        <% } else {%>
+          <span class="status-val"><%= item.rate %>%</span>
+          <% } %>
+      <span class="J_Del del">x</span>
+    </td>
+  </tr>
+  <% }); %>

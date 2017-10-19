@@ -1,0 +1,24 @@
+<% data.forEach(function(item, index) { %>
+  <% var len = item.update_at.length; %>
+    <tr class="J_Hover">
+      <td class="date">
+        <% var date = item.update_at.substring(0, len - 3) %>
+        <span class="date-years"><%= date.substring(0, date.length - 5) %></span>
+        <span class="date-hour"><%= date.substring(date.length - 6, date.length) %></span>
+      </td>
+      <td class="count <%= item.amount < 0 ? 'down' : ''%>">
+        <%= parseFloat(item.amount).toFixed(2) %>
+      </td>
+      <td class="category">
+        <%= item.desc %>
+      </td>
+    </tr>
+    <% }); %>
+      <% if (data.length === 0) {%>
+        <% var descArr = ['您还没有任何资金记录', '您还没有交易盈亏记录', '您还没有出金记录', '您还没有入金记录', '您还没有奖金记录', '您还没有朋友赚奖金记录', '您还没有佣金记录', '您还没有红包领取记录']; %>
+          <tr>
+            <td class="empty" colspan="3">
+              <%= descArr[data.indexVal] %>
+            </td>
+          </tr>
+          <%}%>

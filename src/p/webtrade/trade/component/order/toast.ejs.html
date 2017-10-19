@@ -1,0 +1,6 @@
+<div class="toast-wrapper">
+  <div class="inner">
+  订单：<%= data.order.ticket || data.order.id %> <%= data.type === 'closed' ? '平仓' : data.type === 'rejected' ? '开仓失败': data.type === 'margin_check' ? '强制平仓' : '开仓' %>，<%= data.type !== 'open' ? '盈利：' + data.order.profit : '' %>
+  <img class="close" src="../../img/close-pop.png">
+  </div>
+</div>

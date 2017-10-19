@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>注册</title>
+  <meta charset="utf-8">
+  <meta name="keyword" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit">
+  <script src="../../src/lib/modernizr.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../src/p/webtrade/first-login/index.css">
+  
+  <script src="../../resources/r.js"></script>
+  <!-- <script type="text/javascript" src="jquery.js"></script>  -->
+  <link rel="shortcut icon" href="../../resources/favicon.ico">
+</head>
+
+<body>
+  <header></header>
+  <div class="content">
+    <div class="content-inner">
+      <div class="img-wrapper-outer" id="logo-wrapper">
+        <div class="img-wrapper">
+          <!-- <img id="img-logo" src="../../img/logo.png" alt="" class="img"> -->
+          <img id="img-logo" src="" alt="" class="img">
+        </div>
+      </div>
+      <div class="form-wrapper" style="position: relative;">
+        <form action="post" id="J_Form" style="padding-bottom:90px">
+          <div class="wrapper J_Wrapper hover">
+            <input class="username J_Username tel" autofocus="autofocus" type="text" placeholder="注册手机号"></input>
+            <span class="icon phone"></span>
+          </div>
+          <div class="wrapper J_Wrapper I_code" style="display: none;">
+            <input class="inv_code" type="text" placeholder="输入邀请码"></input>
+            <!-- <span class="icon code"></span> -->
+          </div>
+          <!--
+          <div class="wrapper J_Wrapper">
+            <input class="real-password J_RealPassword" type="password" placeholder="实盘交易密码"></input>
+            <span class="icon password"></span>
+          </div>
+          -->
+          <div class="wrapper J_Wrapper code-wrapper">
+            <input type="text" class="code short J_Code" placeholder="短信验证码" disabled>
+            <input type="button" class="get-code J_GetCode" value="获取验证码">
+            <div class="image-captcha" id="J_ImageCaptcha">
+              <div class="image-captcha-center" id="J_ImageCaptcha-mask">
+                <p>请输入图中数字验证码:</p>
+                <div class="wrapper clearfix code-wrapper">
+                  <input class="captcha-text" type="text" placeholder="验证码" 	name="captcha" >
+                  <img class="captcha" src="">
+                  <p id="captcha-message"></p>
+                  <div>
+                    <input class="get-captcha disable" type="button" value="确认">
+                    <input class="close-captcha" type="button" value="取消">
+                  </div>
+                  <!--<span class="icon error-icon"></span>-->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper submit-wrapper J_SubmitWrapper J_Wrapper">
+            <input class="submit J_Submit" type="submit" value="马上注册">
+          </div>
+          <!-- <div class="desc">忘记密码请登录移动端重置</div> -->
+        </form>
+        <a class="login" href="./login.html" style="position: absolute; bottom: 20px;">登录已有账户</a>
+      </div>
+    
+    
+      <div class="qrcode-mask" style="display:none;">
+        <!-- <img src="../../img/first-login-qrcode.png" alt=""> -->
+        <div id="qrcodeTable" ></div>
+        <div class="extra">扫码注册 领取 15 美元</div>
+      </div>
+
+      <div class="qrcode">
+        <div class="desc">还没有帐号?</div>
+        <span class="J_ShowQrcode">扫码注册</span>
+        
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+  </div>
+  <script src="../../src/lib/lib.js"></script>
+  <script src="../../src/invwebtrade.config.dev.js"></script>
+  <script src="../../build/webtrade/register.js"></script>
+  
+     
+
+</body>
+
+</html>

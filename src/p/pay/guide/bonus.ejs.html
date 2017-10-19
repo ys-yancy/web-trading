@@ -1,0 +1,13 @@
+<span class="triangle"></span>
+<div class="detail-item">
+    <h3>赠金方案：</h3>
+    <% data.ratio.forEach(function(item) { %>
+        <p>充值
+            <%= item.limit %><span class="de_sign">美</span>元赠
+                <%= (item.ratio * 100).toFixed(2) %>%</p>
+        <% }); %>
+</div>
+<div class="detail-item second">
+    <h3>活动时间：</h3>
+    <p><%= data.begin %>至<%= data.expire %></p>
+</div>

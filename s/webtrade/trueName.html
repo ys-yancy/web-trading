@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>个人信息页</title>
+    <meta charset="utf-8">
+    <meta name="keyword" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <link rel="shortcut icon" href="../../resources/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../src/p/webtrade/trueName/index.css">
+    <script src="../../resources/r.js"></script>
+</head>
+
+<body>
+    <div class="header" id="J_Header">
+        <div class="header-inner">
+        <h1><span class="company-name"></span>&nbsp;|&nbsp;<span>个人信息页</span></h1>
+            <div class="other">
+                <span class="exit logout">退出</span>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-inner">
+            <ul class="info">
+                <li class="item phone-wrapper clearfix"><span class="warn txtSmall">提示：</span>
+                    <span class="wrapper warn-content txtSmall">为保证您账户安全，您需要补齐以下信息，请按照提示操作。</span>
+                </li>
+                <li class="item clearfix">手机号码：
+                    <input id='truephone' type="text" value="" disabled>
+                </li>
+                <li class="item clearfix">真实姓名：
+                    <input class="J_CardName" type="text" value="" placeholder="真实姓名需要与您提交的身份证姓名一致">
+                </li>
+                <li class="item clearfix">身份证号：
+                    <input class="J_CardId" type="text" value="" placeholder="请输入身份证号">
+                </li>
+                <li class="item upload">
+                    <ul>
+                        <li class="upload-item">
+                            <div class="detail">
+                                <span class="icon"></span>
+                                <p>身份证正面</p>
+                            </div>
+                            <div class="preview img-wrapper J_ImgWrapper J_CardFront"></div>
+                            <input type="file" class="upload-input" accept="*/*">
+                        </li>
+                        <li class="upload-item">
+                            <div class="detail">
+                                <span class="icon"></span>
+                                <p>身份证背面</p>
+                            </div>
+                            <div class="preview img-wrapper J_ImgWrapper J_CardBack"></div>
+                            <input type="file" class="upload-input">
+                        </li>
+                    </uL>
+                </li>
+                <!-- <li class="item clearfix">开户银行：
+                    <input class="J_BankName" type="text" value="" placeholder="请输入开户银行名称">
+                </li> -->
+                <li class="item clearfix">开户银行：
+                    <select id='mybanks'>
+                        <option value="CCB">中国建设银行</option>
+                        <option value="ABC">中国农业银行</option>
+                        <option value="ICBC">中国工商银行</option>
+                        <option value="BOC">中国银行</option>
+                        <option value="CMBC">中国民生银行</option>
+                        <option value="CMB">招商银行</option>
+                        <option value="CIB">兴业银行</option>
+                        <option value="HASECNSHBEJ">恒生银行</option>
+                    </select>
+                </li>
+                <li class="item clearfix">银行卡号：
+                    <input class="J_BankId"  type="text" value="" placeholder="需与身份证同名银行借记卡(暂不支持信用卡)">
+                </li>
+                <li class="item upload bank">
+                    <ul>
+                        <li class="upload-item">
+                            <div class="detail">
+                                <span class="icon"></span>
+                                <p>银行卡正面</p>
+                            </div>
+                            <div class="preview img-wrapper J_ImgWrapper J_BankFront"></div>
+                            <input type="file" class="upload-input">
+                        </li>
+                        <li class="upload-item">
+                            <div class="detail">
+                                <span class="icon"></span>
+                                <p>银行卡反面</p>
+                            </div>
+                            <div class="preview img-wrapper J_ImgWrapper J_BankBack"></div>
+                            <input type="file" class="upload-input">
+                        </li>
+                        <li class="desc-item"></li>
+                    </uL>
+                </li>
+                <li class="item phone-wrapper clearfix">
+                    <span class="warn txtSmall">说明：</span>
+                    <span class="wrapper warn-content txtSmall">以上信息仅限于<a id="company"></a>使用。</span>
+                </li>
+                <li id="trueMsg" class="item clearfix riskMsg" style="display:none">
+                    
+                </li>
+                <li id="agreeTrueMsg" style="display:none">
+                    <input id="agree" type="checkbox" checked="checked">
+                    <span id="agreeMsg">我已阅读以上安全协议</span>
+                </li>
+            </ul>
+            <div class="submit"><input type="button" class="button J_Submit" value="提交资料"></div>
+        </div>
+    </div>
+
+   <!--  <div class="footer">
+        <div class="footer-inner">
+            <ul class="clearfix">
+                <li><a class="link" href="http://www.invhero.com/download.php" target="_blank">下载APP</a></li>
+                <li class="slash"></li>
+                <li><a class="link" href="http://www.invhero.com/about.php" target="_blank">关于我们</a></li>
+                <li class="slash"></li>
+                <li><a class="link" href="http://www.invhero.com/contact_us.php" target="_blank">联系我们</a></li>
+                <li class="slash"></li>
+                <li><a class="link" href="http://www.jobtong.com/e/4714" target="_blank">职位招聘</a></li>
+                <li class="slash"></li>
+                <li><a class="link long" href="http://www.invhero.com/" target="_blank">意见与反馈</a></li>
+                <li class="slash"></li>
+                <li><a class="link" href="http://www.invhero.com/business.php" target="_blank">商务合作</a></li>
+            </ul>
+            <div class="copyright">Copyright © 2015 Invhero.com</div>
+        </div>
+    </div> -->
+    <script src="../../src/lib/lib.min.js"></script>
+    <script src="../../build/webtrade/truename.js"></script>
+</body>
+
+</html>

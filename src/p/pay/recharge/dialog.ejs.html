@@ -1,0 +1,55 @@
+<div class="dialog small fade dialog-confirm" style="display: none;">
+    <div class="dialog-inner">
+        <div class="dialog-hd">
+            <h2>请确认充值信息</h2>
+            <span class="dialog-close"></span>
+        </div>
+        <div class="dialog-bd">
+            <ul>
+                <li class="item">
+                    <div class="title">交易平台：</div>
+                    <p><%= data.company_name %></p>
+                </li>
+                <!-- <li class="item">
+                        <div class="title">姓<span class="space">名：</span></div>
+                        <p>投资英豪 </p>
+                    </li> -->
+                <li class="item">
+                    <div class="title">电话号码：</div>
+                    <p>
+                        <%= data.phone %>
+                    </p>
+                </li>
+                <li class="item">
+                    <div class="title">充值金额：</div>
+                    <p><span class="unit">$</span>
+                        <%= data.amount %>
+                    </p>
+                </li>
+                <li class="item">
+                    <div class="title">赠<span class="space">送：</div>
+                        <p><span class="unit">$</span>
+                        <%= data.bonus %>
+                            </p>
+                </li>
+                <li class="item">
+                    <div class="title">付款银行：</div>
+                    <p>
+                        <%= data.bankName %>
+                    </p>
+                </li>
+                <li class="item">
+                    <div class="title">交易日期：</div>
+                    <p>
+                        <%= data.date %>
+                    </p>
+                </li>
+            </ul>
+            </div>
+            <div class="dialog-ft">
+                <form action="" target="_blank" method="post" id="J_Charge">
+                    <input type="submit" class="submit J_Submit loading" value="数据获取中...">
+                </form>
+            </div>
+        </div>
+    </div>

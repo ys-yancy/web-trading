@@ -1,0 +1,141 @@
+@import '../../../../../variable.less';
+.account-detail-inner {
+  height: 412px;
+  background: #fff;
+  
+  .hd {
+    padding-top: 3px;
+    padding-left: 3px;
+    h2 {
+      width: 282px;
+      line-height: 38px;
+      color: #666;
+      padding-left: 10px;
+      font-size: 16px;
+      background: #f1f3f6;
+    }
+  }
+  .bd {
+    padding-top: 4px;
+    .name {
+      float: left;
+      font-size: 12px;
+      line-height: 52px;
+      padding-left: 15px;
+      width: 94px;
+      color: #666;
+    }
+    .count {
+      margin-left: 90px;
+      margin-right: 6px;
+      text-align: right;
+      height: 52px;
+      line-height: 52px;
+      color: #333;
+      font-size: 22px;
+      &.profit {
+        color: #f34e4c;
+      }
+      .num-float {
+        font-size: 16px;
+      }
+    }
+  }
+  .ft {
+    margin-top: 13px;
+    padding-left: 16px;
+    button,
+    a {
+      width: 128px;
+      height: 28px;
+      line-height: 28px;
+      font-size: 13px;
+      background: #ff6633;
+      color: #fff;
+      border-radius: 3px;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      .border-radius(3px);
+
+      &:disabled {
+        background: #cccccc;
+      }
+      &.extract {
+        font: 13px 'Microsoft YaHei', Helvetica, Arial, sans-serif;
+      }
+    }
+    a {
+      vertical-align: top;
+    }
+  }
+  input, button {
+    outline: 0;
+  }
+  * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+.content-riskMsg{
+    position: absolute;
+    top:30px;
+    left:50%;
+    bottom: 30px;
+    margin-left:-610px;
+    width: 1140px;
+    background:#fff;
+    border:1px solid #000;
+    padding:40px;
+    z-index:1000;
+    overflow: hidden;
+    h2{
+      font-size:20px;
+      font-weight:bold;
+      text-align:center;
+    }
+    p{
+      text-align:justify;
+    }
+    .marginTop{
+      margin-top:15px;
+    }
+    .txtIndent{
+      text-indent:24px;
+    }
+    .c_center{
+      height: 90%;
+      overflow-x: hidden;
+      overflow-y: scroll;
+    }
+    .c_footer{
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      text-align:center;
+    }
+    .J_Submit{
+      margin: 30px 0px;
+      padding: 5px 40px;
+      background: #3AB9E6;
+      border:none;
+      border-radius:1px;
+      color:#fff;
+      font-size:20px;
+      cursor: pointer;
+    }
+
+  }
+  .riskMsg-mask{
+      position: absolute;
+      top:0px;
+      left:0;
+      right: 0;
+      bottom: 0;
+      background:rgba(0,0,0,0.8);
+      z-index:999;
+  }

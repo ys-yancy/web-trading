@@ -1,0 +1,517 @@
+<!doctype html>
+<html>
+<head>
+    <title>交易</title>
+    <meta charset="utf-8">
+    <meta name="keyword" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    
+    <script type="text/javascript">
+    function getCookie(c_name) {
+        // if (document.cookie.length > 0) {
+        //     c_start = document.cookie.indexOf(c_name + "=");
+        //     if (c_start != -1) {
+        //         c_start = c_start + c_name.length + 1
+        //         c_end = document.cookie.indexOf(";", c_start)
+        //         if (c_end == -1) c_end = document.cookie.length
+        //         return unescape(document.cookie.substring(c_start, c_end))
+        //     }
+        // }
+        // return "";
+        if( window.localStorage ) {
+            return window.localStorage.getItem('phone');
+        }
+        return '';
+    }
+    if (!getCookie('phone')) {
+        location.href = './login.html';
+    }
+    </script>
+    <script src="../../resources/r.js"></script>
+    <script src="../../src/lib/modernizr.js"></script>
+    <script type="text/javascript" src="../../src/lib/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="charting_library/charting_library.min.js"></script>
+    <script type="text/javascript" defer src="../../src/lib/highcharts.js"></script>
+    <link rel="shortcut icon" href="../../resources/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../src/p/webtrade/trade/index.css">
+</head>
+
+<body>
+    <header>
+        <div class="account-wrapper-outer">
+            <div class="account-wrapper">
+              <div class="item account">
+                <div class="img-wrapper-outer">
+                  <div class="img-wrapper">
+                    <img class="img" src="" alt="">
+                  </div>
+                </div>
+                <div class="desc">
+                  <p class="name">--</p>
+                  <p class="phone">--</p>
+                </div>
+              </div>
+              <div class="item float-profit J_FloatProfit">
+                <span class="count J_Int">--</span><span class="dotted J_Float"></span>
+                <p class="name">浮动盈亏</p>
+              </div>
+              <div class="item J_CurTicket cur-ticket">
+                <span class="count J_Int">--</span><!--<span class="dotted J_Float"></span>-->
+                <p class="name">当前订单</p>
+              </div>
+              <div class="item J_Rate rate">
+                <span class="count J_Int">--</span><span class="dotted J_Float"></span>
+                <p class="name">保证金比例(%)</p>
+              </div>
+              <div class="item J_FreeMargin free-margin">
+                <span class="count J_Int">--</span><span class="dotted J_Float"></span>
+                <p class="name">可用保证金</p>
+              </div>
+              <div class="item J_Balance balance">
+                <span class="count J_Int">--</span><span class="dotted J_Float"></span>
+                <p class="name">账户余额</p>
+              </div>
+              <div class="item J_NetDeposit net-deposit">
+                <span class="count J_Int">--</span><span class="dotted J_Float"></span>
+                <p class="name">账户净值</p>
+              </div>
+              
+              <div class="item ">
+                <span class="count J_Int">美元</span>
+                <p class="name">账户货币</p>
+              </div>
+             <!--  <div class="item extract">
+                
+              </div> -->
+              <div class="item recharge">
+                <a href="javascript:void(0)" class="extract">提取资金</a><a href="" target="_blank" class="recharge">存入资金</a>
+              </div>
+            </div>
+        </div>
+        <div class="exit-wrapper">
+          <span class="ext J_Exit">安全退出</span>
+        </div>
+    </header>
+    <div class="content">
+        <div class="content-outer">
+            <div class="content-inner clearfix">
+                <div class="main">
+                    <div class="chart-wrapper" style="position: relative;">
+                        <div class="chart" id="J_Chart">
+                        </div>
+                    </div>
+                   <!--  <div class="account-wrapper clearfix" id="J_Account">
+                        <div class="desc">我的账户
+                            <span class="triangle"></span>
+                            <span class="triangle bottom"></span>
+                            <span class="bar"></span>
+                            <span class="bar bar-bottom"></span>
+                        </div>
+                        <div class="item float-profit J_FloatProfit">
+                            <span class="name">浮动盈亏：</span>
+                            <span class="count J_Int">--</span><span class="dotted J_Float"></span>
+                        </div>
+                        <span class="J_ResponsiveMargin"></span>
+                        <div class="item J_FreeMargin free-margin">
+                            <span class="name">可用保证金：</span>
+                            <span class="count J_Int">--</span><span class="dotted J_Float"></span>
+                        </div>
+                        <span class="J_ResponsiveMargin"></span>
+                        <div class="item J_Balance balance">
+                            <span class="name">余额：</span>
+                            <span class="count J_Int">--</span><span class="dotted J_Float"></span>
+                        </div>
+                        <span class="J_ResponsiveMargin"></span>
+                        <div class="item J_NetDeposit net-deposit">
+                            <span class="name">净值：</span>
+                            <span class="count J_Int">--</span><span class="dotted J_Float"></span>
+                        </div>
+                        <span class="J_ResponsiveMargin"></span>
+                        <div class="item J_Rate rate">
+                            <span class="name">保证金比例：</span>
+                            <span class="count J_Int">--</span><span class="dotted J_Float"></span>%
+                        </div>
+                        <a href="../pay/guide.html" target="_blank" class="recharge">存入资金</a>
+                    </div> -->
+                    <style> #trade-hd:hover{ cursor:move;} </style>
+                    <div class="trade-wrapper hidden" id="J_OrderTab">
+                        <div class="trade-hd clearfix" id="trade-hd">
+                            <div class="trade-nav-wrapper clearfix">
+                                <div class="tab-nav active">当前交易(<span class="num J_OrderNum">--</span>)
+                                </div>
+                                <div class="tab-nav history">历史交易(<span class="num J_Num J_OrderHistoryNum">--</span>)</div>
+                            </div>
+                            <div class="switch-wrapper clearfix" style="display:none;">
+                                <div class="switch list active">
+                                    <span class="icon">
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    </span>列表视图</div>
+                                <div class="switch order" style="display:none;">
+                                    <span class="icon">
+                                    <span class="rect"></span>
+                                    <span class="rect"></span>
+                                    <span class="rect"></span>
+                                    <span class="rect"></span>
+                                    </span>订单视图</div>
+                            </div>
+                            <span class="bar"></span>
+                        </div>
+                        <div class="trade-bd" >
+                            <div class="tab-content J_Drag-order J_DragOrder">
+                                <div class="order-list" id="J_List">
+                                    <table class="list list-fixed" style="display: none;">
+                                        <thead>
+                                            <tr>
+                                                <td class="id" data-type="id">订单编号
+                                                    <div class="ticket-wrapper J_SortType" style="display:none;">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="symbol symbol-hd" data-type="symbol" >
+                                                    <!--<img class="J_ResetSort" src="../../img/webtrade-reset.png">-->
+                                                    交易品种
+                                                </td>
+                                                <td class="float-profit" data-type="profit">当前盈亏
+                                                    <div class="order-wrapper J_SortType">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="type" data-type="type">操作
+                                                    <div class="order-wrapper  J_SortType">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="margin" data-type="margin">保证金
+                                                    <div class="order-wrapper J_SortType">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="volume" data-type="volume">交易量
+                                                    <div class="order-wrapper J_SortType">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="open-price">开仓价格</td>
+                                                <td class="current-price">当前价格</td>
+                                                <td class="take-profit">止盈价格</td>
+                                                <td class="stop-loss">止损价格</td>
+                                                <td class="swap">隔夜利息</td>
+                                                <td class="commission">手续费</td>
+                                                <td class="date">开仓时间</td>
+
+                                                <td class="action"><span class="J_MoreDetail more-detail">显示更多</span></td>
+                                                <td class="action share"></td>
+                                            </tr>
+                                        </thead>
+
+                                        <body></body>
+                                    </table>
+                                    <table class="list">
+                                        <thead>
+                                            <tr>
+                                                <td class="id" data-type="id">订单编号
+                                                    <div class="ticket-wrapper J_SortType" style="display:none;">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="symbol symbol-hd" data-type="symbol" >
+                                                    <!--<img class="J_ResetSort" src="../../img/webtrade-reset.png">-->
+                                                    交易品种
+                                                </td>
+                                                <td class="float-profit" data-type="profit">当前盈亏
+                                                    <div class="order-wrapper J_SortType">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="type" data-type="type">操作
+                                                    <div class="order-wrapper  J_SortType">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="margin" data-type="margin">保证金
+                                                    <div class="order-wrapper J_SortType">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="volume" data-type="volume">交易量
+                                                    <div class="order-wrapper J_SortType">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="open-price">开仓价格</td>
+                                                <td class="current-price">当前价格</td>
+                                                <td class="take-profit">止盈价格</td>
+                                                <td class="stop-loss">止损价格</td>
+                                                <td class="swap">隔夜利息</td>
+                                                <td class="commission">手续费</td>
+                                                <td class="date">开仓时间</td>
+
+                                                <td class="action"><span class="J_MoreDetail more-detail">显示更多</span></td>
+                                                <td class="action share"></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="tbody"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-content J_Drag-order J_DragHisOrder" style="display:none;">
+                                <div class="order-list" id="J_HistoryList">
+                                    <table class="list history list-fixed" style="display: none">
+                                        <thead>
+                                            <tr>
+                                                <td class="id" data-type="id">订单编号
+                                                    <div class="order-wrapper J_SortType active up-active">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="symbol" data-type="symbol">交易品种
+                                                    <div class="order-wrapper J_SortType ">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="type" data-type="type">操作
+                                                    <div class="order-wrapper  J_SortType">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="volume" data-type="volume">交易量
+                                                    <div class="order-wrapper  J_SortType">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="total-profit" data-type="total">总盈亏
+                                                    <div class="order-wrapper  J_SortType">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="float-profit" data-type="profit">交易盈亏
+                                                    <div class="order-wrapper  J_SortType">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <!--<td class="end-type">平仓方式</td>-->
+                                                <td class="open-price">开仓价格</td>
+                                                <td class="end-price">平仓价格</td>
+                                                <td class="take-profit">止盈价格</td>
+                                                <td class="stop-loss">止损价格</td>
+                                                <td class="swap">隔夜利息</td>
+                                                <td class="commission">手续费</td>
+                                                <td class="date">开仓时间</td>
+                                                <td class="date">平仓时间</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                    <table class="list history">
+                                        <thead>
+                                            <tr>
+                                                <td class="id" data-type="id">订单编号
+                                                    <div class="order-wrapper J_SortType active up-active">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="symbol" data-type="symbol">交易品种
+                                                    <div class="order-wrapper J_SortType ">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="type" data-type="type">操作
+                                                    <div class="order-wrapper  J_SortType">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="volume" data-type="volume">交易量
+                                                    <div class="order-wrapper  J_SortType">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="total-profit" data-type="total">总盈亏
+                                                    <div class="order-wrapper  J_SortType">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="float-profit" data-type="profit">交易盈亏
+                                                    <div class="order-wrapper  J_SortType">
+                                                        <span class="triangle up"></span>
+                                                        <span class="triangle down"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="end-type">平仓方式</td>
+                                                <td class="open-price">开仓价格</td>
+                                                <td class="end-price">平仓价格</td>
+                                                <td class="take-profit">止盈价格</td>
+                                                <td class="stop-loss">止损价格</td>
+                                                <td class="swap">隔夜利息</td>
+                                                <td class="commission">手续费</td>
+                                                <td class="date">开仓时间</td>
+                                                <td class="date">平仓时间</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="tbody">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar fold">
+                    <div id="J_SidebarInner">
+                        <div class="trigger-wrapper J_TriggerTab">
+                            <div class="trigger-inner">
+                                <span class="triangle"></span>
+                            </div>
+                        </div>
+                        <div class="morewidth-wrapper J_MorewidthTab">
+                            <div class="morewidth-inner">
+                                <span class="morewidth"></span>
+                            </div>
+                        </div>
+                        <ul class="tab-nav-wrapper">
+                            <li class="tab-nav">
+                                <span class="sidebar-icon"></span>
+                                <!-- <p>个人</p> -->
+                            </li>
+                            <li class="tab-nav active ">
+                                <span class="sidebar-icon"></span>
+                                <!-- <p>品种</p> -->
+                            </li>
+                            <li class="tab-nav">
+                                <span class="sidebar-icon"></span>
+                                <!-- <p>资产</p> -->
+                            </li>
+                            <!-- <li class="xian"></li> -->
+                            <li class="tab-nav">
+                                <span class="sidebar-icon"></span>
+                                <!-- <p>日历</p> -->
+                            </li>
+                            
+                            <li class="tab-nav">
+                                <span class="sidebar-icon"></span>
+                                <!-- <p>榜单</p> -->
+                            </li>
+                            <!-- <li class="xian"></li> -->
+                            <li class="tab-nav" style="">
+                                <span class="sidebar-icon"></span>
+                                <!-- <p>订单</p> -->
+                            </li>
+                            <li class="tab-nav" style="">
+                                <span class="sidebar-icon"></span>
+                                <!-- <p>跟单</p> -->
+                            </li> 
+                            <!-- <li class="xian"></li> -->
+                            <li class="tab-nav" style="display: none;">
+                                <span class="sidebar-icon"></span>
+                                <!-- <p>直播</p> -->
+                            </li>
+
+                            <li class="tab-nav">
+                                <span class="sidebar-icon"></span>
+                                <!-- <p>新闻</p> -->
+                            </li>
+                            <li class="tab-nav" style="">
+                                <span class="sidebar-icon"></span>
+                                <!-- <p>关于</p> -->
+                            </li>
+
+                            <li class="tab-nav ticket" style="display:none">
+                                <span class="sidebar-icon"></span>
+                                <!-- <p>订单详情</p> -->
+                            </li>
+                        </ul>
+                        <div class="tab-content-wrapper">
+                            <div class="tab-content profile" id="J_Profile" style="display:none;"></div>
+                            <div class="tab-content symbols" id="J_Option">
+                                <div class="hd search-wrapper">
+                                    <div class="hd">
+                                        关注品种
+                                        <div class="clearfix search">
+                                            <input type="text" id="J_Search" placeholder="输入品种名称或代码" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bd">
+                                    <table id="J_moveSymbolTable">
+                                        <thead>
+                                            <tr>
+                                                <td class="name">交易品种</td>
+                                                <td class="bid-price">卖出价</td>
+                                                <td class="ask-price">买入价</td>
+                                                <td class="status">涨跌幅度</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="J_OptionList">
+                                            <tr class="loading" style="display:none;background:#fff;">
+                                                <td colspan="4" style="text-align: center;">加载中...</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-content account-detail" id="J_AccountDetail" style="display:none;"></div>
+                            <div class="tab-content economic-calendar" id="J_Calendar" style="display:none;"></div>
+                            <div class="tab-content trade-list" id="J_TradeList" style="display:none;"></div>
+                            <div class="tab-content actual-order" id="J_ActualOrder" style="display:none;"></div>
+                            <div class="tab-content myFollow-order" id="J_MyFollowOrder" style="display:none;"></div>
+                            <div class="tab-content" style="display:none;"></div>
+                            <div class="tab-content new-message" id="J_NewMessage" style="display:none;"></div>
+                            <div class="tab-content about" id="J_About" style="display:none;"></div>
+                            <div class="tab-content order-detail" id="J_OrderDetail" style="display:none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="riskMsg-mask" style="display:none">
+        <div class="content-riskMsg">
+            <div class="c_header">
+                <h2>风险提示书</h2>
+            </div>
+            <div class="c_center">
+                
+            </div>
+            <div class="c_footer">
+                <input type="button" class="button J_Submit" value="我已阅读">
+            </div>
+        </div>
+    </div>
+    <div class="J_withdraw withdraw-wrapper" style="display: none;"></div>
+    <div class="footer">
+    </div>
+    <div class="toast-wrapper-outer" id="J_ToastWrapper"></div>
+    <script src="../../src/lib/lib.js"></script>
+    <script src="../../src/invwebtrade.config.dev.js"></script>
+
+    <script src="../../build/webtrade/trade.js"></script>
+<script>
+
+</script>
+</body>
+
+</html>

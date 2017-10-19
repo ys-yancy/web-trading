@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>注册</title>
+  <meta charset="utf-8">
+  <meta name="keyword" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit">
+  <script src="../../../src/lib/modernizr.js"></script>
+  <link type="text/css" href="//g.alicdn.com/sd/ncpc/nc.css?t=1487311511961" rel="stylesheet"/>
+  <script type="text/javascript" src="//g.alicdn.com/sd/ncpc/nc.js?t=1487311511961"></script>
+  <link rel="stylesheet" type="text/css" href="../../../src/p/webtrade/xinwaihui/register-pc/index.css">
+  
+  <script src="../../../resources/r.js"></script>
+  <!-- <script type="text/javascript" src="jquery.js"></script>  -->
+  <link rel="shortcut icon" href="https://wt-xinwaihui.invhero.com/xinwaihui/resources/favicon.ico">
+  
+  <style>
+  .content form .get-code.active {
+        background: #fb7306 none repeat scroll 0 0;
+        
+  }
+
+    .content .img-wrapper-outer {
+        background: white none repeat scroll 0 0;
+    }
+    
+    .content .form-wrapper {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+    }
+    
+    .content form .submit.active {
+        background: #009ee4 none repeat scroll 0 0;
+        
+  }
+  
+    .content form .submit.active:hover {
+        background: #0170a1 none repeat scroll 0 0;
+        
+  }
+  
+    
+    .content form .get-code, .content form .submit {
+        border-radius: 2px;
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+        border-width: 0;
+    }
+    input[type="checkbox" i] {
+    -webkit-appearance: checkbox;
+    box-sizing: border-box;
+}
+ </style>
+</head>
+
+<body>
+  <header></header>
+  <div class="content">
+    <div class="content-inner">
+      <div class="img-wrapper-outer" id="logo-wrapper">
+        <div class="img-wrapper">
+          <img id="img-logo" src="https://wt-xinwaihui.invhero.com/xinwaihui/img/xinwaihui/logo.png" alt="" class="img">
+        </div>
+      </div>
+      <div class="form-wrapper" style="position: relative;">
+        <form action="post" id="J_Form" style="padding-bottom:90px">
+          <div class="wrapper J_Wrapper hover">
+            <input class="username J_Username" autofocus="autofocus" type="text" placeholder="注册手机号"></input>
+            <span class="icon phone"></span>
+          </div>
+          <!--
+          <div class="wrapper J_Wrapper">
+            <input class="real-password J_RealPassword" type="password" placeholder="实盘交易密码"></input>
+            <span class="icon password"></span>
+          </div>
+          -->
+          <div class="wrapper J_Wrapper click-verify" style="display: none;">
+            <input type="text" class="code short J_Code" placeholder="短信验证码" disabled>
+            <input type="button" class="get-code J_GetCode" value="获取验证码">
+          </div>
+          <div class="wrapper submit-wrapper J_SubmitWrapper J_Wrapper click-verify" style="display: none;">
+            <input class="submit J_Submit" type="submit" value="马上注册">
+          </div>
+          
+          <div class="wrapper J_Wrapper click-verify" style="padding-top:10px;display: none;">
+          <input type="checkbox" style="width:10px; height:10px;" name="agreed" id="cboxAgreed" checked />我同意并遵守新外汇网站<a href='http://www.xinwaihui.com/siteinfo/sterms'>注册协议</a>
+          </div>
+          <!-- <div class="desc">忘记密码请登录移动端重置</div> -->
+        </form>
+
+        <!--  滑动验证  -->
+        <div class="ln2 slide-verify" style="display:block;">
+          <div id="dom_id"></div>
+        </div>
+
+        <input type='hidden' id='csessionid' name='csessionid'/>
+        <input type='hidden' id='sig' name='sig'/>
+        <input type='hidden' id='token' name='token'/>
+        <input type='hidden' id='scene' name='scene'/>
+
+        <a class="login" href="../login.html" style="position: absolute; bottom: 20px;">登录已有账户</a>
+      </div>
+    
+    
+      <div class="qrcode-mask" style="display:none;">
+        <!-- <img src="../../img/first-login-qrcode.png" alt=""> -->
+        <div id="qrcodeTable" ></div>
+        <div class="extra">扫码注册 领取 15 美元</div>
+      </div>
+
+      <div class="qrcode">
+        <div class="desc">还没有帐号?</div>
+        <span class="J_ShowQrcode">扫码注册</span>
+        
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+  </div>
+  <script src="../../../src/lib/lib.js"></script>
+  <script src="../../../src/invwebtrade.config.dev.js"></script>
+  <script src="../../../build/webtrade/xinwaihui/register-pc.js"></script>
+  
+     
+
+</body>
+
+</html>

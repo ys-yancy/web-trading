@@ -1,0 +1,128 @@
+<div class="order-detail J_OrderItem <%= data.ticket %>" data-order="<%= data.ticket %>">
+  <% var guadan = data.status=== 'pending' %>
+    <h2><%= data.status =='closed' ? '历史' : '当前' %>订单详情<span class="close-orderDetail"></span></h2>
+    <div class="hd">
+      <div class="float-margin">
+        <% if (guadan) {%>
+          <span class="tag">挂单</span>
+          <span class="count disabled">--</span>
+          <% } else { %>
+            <span class="count <%= data.profitInt>0?'up':'down' %>">
+              <span class="J_Int"><%= data.profitInt %></span><span class="dotted J_Float">.<%= data.profitFloat %></span></span>
+            <% } %>
+      </div>
+      <ul>
+        <li>
+          <span class="name">订单编号</span>
+          <span class="val"><%= data.ticket %></span>
+        </li>
+        <li>
+          <span class="name">交易品种</span>
+          <span class="val"><%= data.symbolName %> <%= data.symbo %></span>
+        </li>
+        <li>
+          <span class="name">操作类型</span>
+          <span class="val">
+          <%= data.cmd.indexOf('buy') !== -1 ? '买涨' : '买跌' %>
+          <%= data.cmd.toUpperCase() %>
+        </span>
+        </li>
+        <li>
+          <span class="name">开仓价格</span>
+          <span class="val"><%= data.openPrice %></span>
+        </li>
+        <% if (data.status === 'closed') {%>
+          <li>
+            <span class="name">开仓时间</span>
+            <span class="val"><%= data.openTime%></span>
+          </li>
+          <li>
+            <span class="name">平仓价格</span>
+            <span class="val"><%= data.closePrice %></span>
+          </li>
+          <li>
+            <span class="name">平仓时间</span>
+            <span class="val"><%= data.closeTime %></span>
+          </li>
+          <% } %>
+            <li>
+              <span class="name">止盈价格</span>
+              <span class="take-profit val">
+                 <% if (data.status =='closed') {%>
+                  <p style="color: #7d7d7d">
+
+                      <span class="">  <%= parseFloat(data.takeProfit) == 0 ? '点此设置' : data.takeProfit %></span>
+                  </p>
+                  <% } else { %>
+                  <p>
+
+                      <span class="J_Edit">  <%= parseFloat(data.takeProfit) == 0 ? '点此设置' : data.takeProfit %></span>
+                  </p>
+                  <p class="edit-model">
+                    <input type="number" class="J_TakeprofitNumber">
+                    <button class="J_ConfirmEdit" data-type="profit"></button>
+                  </p>
+                  <% } %>
+
+
+              </span>
+            </li>
+            <li>
+              <span class="name">止损价格</span>
+              <span class="stop-loss val">
+                <% if (data.status =='closed') {%>
+                <p style="color: #7d7d7d">
+                      <span class=""> <%= parseFloat(data.stopLoss) == 0 ? '点此设置' : data.stopLoss %></span>
+                  </p>
+                  <% } else { %>
+                 <p>
+                      <span class="J_Edit ">  <%= parseFloat(data.stopLoss) == 0 ? '点此设置' : data.stopLoss %></span>
+                  </p>
+                  <p class="edit-model">
+                    <input type="number" class="J_StoplossNumber">
+                    <button class="J_ConfirmEdit" data-type="stoploss">确定</button>
+                  </p>
+                 <% }  %>
+                </span>
+            </li>
+            <li>
+              <span class="name">隔夜利息差</span>
+              <span class="val"><%= data.swap %></span>
+            </li>
+            <li>
+              <span class="name">手续费</span>
+              <span class="val"><%= data.commission %></span>
+            </li>
+            <% if (data.status !== 'closed') {%>
+              <li>
+                <span class="name">开仓时间</span>
+                <span class="val"><%= data.openTime %></span>
+                <!-- <span class="val"><%= data.openTime.split(' ')[0] %></span> -->
+                <!-- <span class="val date"><%= data.openTime.split(' ')[1] %></span> -->
+              </li>
+              <% } %>
+                <% if (data.status !== 'pending') {%>
+                  <li>
+                    <span class="name">有效期</span>
+                    <% if (!data.expiration) {%>
+                      <span class="val">未设置</span>
+                      <% }else {%>
+                        <span class="val"><%= data.expiration.split(' ')[0] %></span>
+                        <span class="val date"><%= data.expiration.split(' ')[1] %></span>
+                        <%} %>
+                  </li>
+                  <% } %>
+                    <li>
+                      <span class="name">备注</span>
+                      <span class="val"><%= data.comment ? data.comment : '无' %></span>
+                    </li>
+      </ul>
+      <% if (data.status !== 'closed' && !guadan) {%>
+        <div class="btn-wrapper">
+         <span class="J_ActionDetail J_ActionDetailClosed closed">平仓</span>
+         <span class="J_ActionDetail J_ActionDetailShared shared">分享</span>
+         <!-- <span class="J_ActionDetail cancel">取消</span> -->
+        </div>
+      <% } %>
+    </div>
+</div>

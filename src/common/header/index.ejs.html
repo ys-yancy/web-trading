@@ -1,0 +1,31 @@
+<p class="username"></p>
+<p class="balance">账户余额<span class="buck_sign">($)</span>:<span><%= data.account.real.balance %></span></p>
+
+ <div class="account-wrapper">
+    <div class="item account">
+        <div class="img-wrapper-outer">
+          <div class="img-wrapper">
+            <img class="img" src="<%= data.img || '../../img/hd-user-logo.png' %>">
+          </div>
+        </div>
+        <div class="desc">
+          <p class="name"><%= data.nickname %></p>
+          <p class="phone"><%= data.phone %></p>
+        </div>
+    </div>
+    <div class="item J_Balance balance">
+        <div class="desc">
+        <span class="count J_Int"><%= data.account.real.balance %></span>
+        <p class="name">账户余额</p>
+        </div>
+    </div>        
+    <div class="item ">
+        <div class="desc">
+        <span class="count J_Int">美元</span>
+        <p class="name">账户货币</p>
+        </div>
+    </div>
+</div>
+<div class="other">
+    <span class="exit logout">安全退出</span>
+</div>

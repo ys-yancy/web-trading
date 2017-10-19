@@ -1,0 +1,39 @@
+<% data.data.forEach(function(item) {%>
+	<% var close_time_arr = item.openTime.split(' ') %>
+	<% var isFollow = item.follow ? true : false %>
+	<tr class="J_SymbolItem <%= item.isNowRender ? 'now' : '' %>" data-symbol="<%= item.symbol.replace(/\./g, '-') %>">
+		<td class="profile">
+			<div class="img-wrapper-outer">
+				<div class="img-wrapper">
+					<img class="img" src="<%= item.avatar %>">
+				</div>
+			</div>
+			<div class="desc <%= !isFollow ? 'no' : '' %>">
+				<p class="item name J_Name"><%= item.nickname %></p>
+				<p class="item concern J_Concern">已关注</p>
+			</div>
+			<span class="time-desc"><%= item.isShowDesc %></span>
+		</td>
+		<td class="symbol-open">
+			<% var isUp = item.cmd.indexOf('buy') !== -1  %>
+			<span class="tag <%= isUp ? 'up' : '' %>">
+				<%= item.cmd.indexOf('buy') !== -1 ? '买涨' : '买跌' %></span>
+			<p class="item symbol-name position">
+				<span class="name"><%= item.symbolName %> <%= item.symbol %></span>
+			</p>
+			<p class="item open-price">开仓@ <span class="J_OpenPrice"><%= item.openPrice %></span></p>
+		</td>
+		<td class="time-takeProfit">
+			<p class="item time position"></p>
+			<p class="item take-profit">止盈@ <span class="J_TakeProfit"><%= item.takeProfit %></span></p>
+		</td>
+		<td class="date-stopLoss">
+			<p class="item date position">@ <%= item.openTime%></p>
+			<p class="item stop-loss">止损@ <span class="J_StopLoss"><%= item.stopLoss %></span></p>
+		</td>
+	</tr>
+<%})%>
+
+<% if(!data.data.length) {%>
+	<tr class="no-data"><td>暂无数据</td></tr>
+<%}%>

@@ -1,0 +1,14 @@
+<div class="symbol-nav-wrapper">
+  <div class="symbol-nav" id="J_SymbolNav">
+    <span class="triangle">
+    <span class="triangle-inner"></span>
+    </span>
+    <ul class="clearfix" id="nav-li">
+      <% ['美股', '外汇', '石油', '金属', '股指'].forEach(function(item, index) {%>
+      <li class="<% if(index == data.symbolType) {%> active <%}%>">
+          <a href="javascript:;"><%= item %></a>
+      </li>
+      <%}); %>
+    </ul>
+  </div>
+</div>

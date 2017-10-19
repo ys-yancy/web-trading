@@ -1,0 +1,89 @@
+<div class="extract-wrapper">
+  <div class="hd">
+    <h2>提取资金</h2>
+  </div>
+  <div class="ex-bd">
+    <div class="wrapper">
+      <div class="desc">
+        <span>出金金额（$）</span>
+        <span class="right">当前可出（$）<span class="int J_Int">2334</span><span class="float J_Float">.23</span></span>
+      </div>
+      <input type="number" class="num J_Num" min="100" required placeholder="最低出金金额$100">
+    </div>
+    <div class="wrapper">
+      <div class="desc">
+        <span>手机号</span>
+      </div>
+      <input type="tel" class="phone J_Phone" disbaled>
+    </div>
+    <div class="wrapper">
+      <div class="desc">
+        <span>真实姓名</span>
+      </div>
+      <input type="text" class="card J_Name" required placeholder="需与身份证和银行对应">
+    </div>
+    <div class="wrapper clearfix">
+      <div class="uploader-item">
+        <div class="desc">
+          <span>身份证正面照片</span>
+        </div>
+        <label for="J_CardPositive">浏览文件
+          <input type="file" class="uploader J_Uploader" id="J_CardPositive" value="浏览文件">
+        </label>
+      </div>
+      <div class="uploader-item second">
+        <div class="desc">
+          <span>身份证反面照片</span>
+        </div>
+        <label for="J_CardNegative">浏览文件
+          <input type="file" accept="image/png,image/gif,image/jpeg" class="uploader J_Uploader" id="J_CardNegative" value="浏览文件">
+        </label>
+      </div>
+    </div>
+    <div class="wrapper bar bank-wrapper">
+      <div class="desc">
+        <span>开户银行</span>
+        <div class="dropdown-wrapper">
+          <div class="dropdown J_Dropdown">
+            <p class="val J_Bank">需与身份证和银行对应</p>
+            <span class="triangle"></span>
+          </div>
+          <div class="option-menu J_OptionMenu">
+            <div class="item J_OptionItem">a</div>
+            <div class="item J_OptionItem">b</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="desc">
+        <span>银行卡号</span>
+      </div>
+      <input type="text" required class="card J_BankNum" placeholder="需与身份证和银行对应">
+    </div>
+    <div class="wrapper clearfix">
+      <div class="uploader-item">
+        <div class="desc">
+          <span>银行卡正面照片</span>
+        </div>
+        <label for="J_BankPositive">浏览文件
+          <input type="file" accept="image/png,image/gif,image/jpeg" class="uploader J_Uploader" id="J_BankPositive" value="浏览文件">
+        </label>
+      </div>
+      <div class="uploader-item second">
+        <div class="desc">
+          <span>银行卡反面照片</span>
+        </div>
+        <label for="J_BankNegative">浏览文件
+          <input type="file" accept="image/png,image/gif,image/jpeg" class="uploader J_Uploader" id="J_BankNegative" value="浏览文件">
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="ft">
+    <div class="wrapper bar">
+      <button class="confirm J_Confirm" disabled>提交</button>
+      <button class="close J_Close">取消</button>
+    </div>
+  </div>
+</div>

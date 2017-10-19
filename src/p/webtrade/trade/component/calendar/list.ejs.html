@@ -1,0 +1,58 @@
+<% data.data.forEach(function(item, index) {%>
+    <% if (item.nextWeek) {%>
+        <tr class="tr-date">
+            <td colspan="5">
+                <span class="mouth"><%= item.mouth %></span>
+                <span class="day">星期<%= item.day %></span>
+            </td>
+        </tr>
+    <%} else {%>
+        <tr class="<%= item.noValue ? 'no-value' : '' %>">
+            <%var className;%>
+            <% if (item.weightiness == 1) {%>
+                <% className = 'yel' %>
+            <%} else if(item.weightiness == 2) {%>
+                <% className = 'ora' %>;
+            <%} else {%>
+                <% className = 'red' %>;
+            <%}%>
+            <td class="date clearfix <%= className %>">
+                <p class="desc"><%= item.time.split(' ')[1].substring(0, 5) %></p>
+                <span class="icon">
+                    <img class="img" src="<%= 'http://cdn2.jin10.com/news/wx/img/flag/' + item.countryName + '.png' %>">
+                </span>
+            </td>
+            <td class="effect">
+                <% var AD_GGZ = item.AD_GGZ.split(' ')[0] %>
+                <% if (item.AD_GGZ) {%>
+                    <p class="top <%= AD_GGZ.indexOf('空') !== -1 ? '' : 'up' %>">
+                        <!-- <span class="eff-res">多</span> -->
+                        <span class="eff-desc"><%= AD_GGZ %></span>    
+                    </p>
+                <%}%> 
+                   <!--  <p class="bottom down">
+                        <span class="eff-res">空</span>
+                        <span class="eff-desc"><%= item.AD_LD %></span>
+                    </p> -->
+            </td>
+            <td class="publish">
+                <p class="pub-desc"><%= item.content %></p>
+                <% if(item.updateValue) {%>
+                    <span class="btn J_PubUpdate" data-id="<%= item.id %>">刷新</span>
+                <%} else {%>
+                    <span class="num J_Pub"><%= item.currentValue ? item.currentValue : '未公布' %></span>
+                <%}%>
+            </td>
+            <td class="forecast">
+                <span class="num J_Fore"><%= item.predict ? item.predict : '- -' %></span>
+            </td>
+            <td class="slip">
+                <span class="num J_Slip"><%= item.previous ? item.previous : '- -' %></span>
+            </td>
+        </tr>
+    <%}%>
+<%})%>
+
+<% if(data.data.length == 0) {%>
+    <tr><td class="no-data">暂无数据</td></tr>
+<%}%>

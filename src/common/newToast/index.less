@@ -1,0 +1,45 @@
+.new-toast{
+	position: absolute;
+	z-index: 999999;
+	width: 160px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	background: rgba(234,236,234,.4);
+	border-radius: 5px;
+	// box-shadow: 0 2px 2px #D2D7D3;
+	// -webkit-box-shadow: 0 2px 2px #D2D7D3;
+	// -moz--box-shadow: 0 2px 2px #D2D7D3;
+	.content{
+		width: 100%;
+		.icon{
+			display: none;
+			position: absolute;
+			width: 26px;
+			height: 20px;
+			background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAUCAYAAACTQC2+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBMkRFOTg1Njc4MzgxMUU3QkJGRUZENERCNTkzNjQ1MSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBMkRFOTg1Nzc4MzgxMUU3QkJGRUZENERCNTkzNjQ1MSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkEyREU5ODU0NzgzODExRTdCQkZFRkQ0REI1OTM2NDUxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkEyREU5ODU1NzgzODExRTdCQkZFRkQ0REI1OTM2NDUxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+zB3OngAAAUVJREFUeNq8lbtKQ0EQQE1Q06RXewvR2lSWChHxhRZJsBC0FBUr/8BKP8NX4gNEsFFshYAoaGHjB4gQECzUoGdhiuEyazZm48KBZWfvnn3d2dRzYazjP0q6DWN2wR48QF+7RN0iKcAgXEFvbJGT7MKcahuAC1fpjCjZh1kj9hRL5CQHMGPETmAhhshJDmHaI3Fn9ZE8oyyUYQdSgZKKR3KsJXpFPXAGw+qKrsJ3A8mkETuCkpZo0SUMqfYVqMO6R+JmPBEq0VtXNT5ag21DctqsRIuWZJbJsgFbUs+IZNwjKfokeuvq0tEaaFP+7n4YMcaoyEo+Q3Odm808XBv9FluRWCnoHabgJuB6B0t8ue4N8nDbQFIMlfyWVGvgHqo7I1YWyVes9+hVZPcJSalZSUiue4FROIdHWP6LJDSpOlmu1RT/I8AA6AZGq7pikisAAAAASUVORK5CYII=) no-repeat 0 0;
+			background-size: 100%;
+			top: 8px;
+			left: 20px;
+		}
+		p{
+			position: absolute;
+			left: 0;
+			right: 0;		
+			font-size: 0.7rem;
+			color: #7D7D7D;		
+			text-align: center;
+		}
+	}
+	.triangle-dialog{
+		// display: none;
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-width: 15px 14px;
+		border-style: solid;
+		border-color: rgba(234,236,234,.4) transparent transparent transparent;
+		left: 67px;
+		bottom: -24px;
+	}
+}

@@ -1,0 +1,27 @@
+<div class="category-wrapper clearfix option-category-wrapper" id="J_Category">
+    <form method="get" id="J_Search">
+        <label for="ipt"></label>
+        <input type="text" name="ipt" id="ipt" placeholder="输入您想添加的品种名称" autocomplete="off">
+        <span class="iconfont close J_CloseCat iconfont"></span>
+        <span class="search-icon J_SearchIcon"></span>
+    </form>
+    <div class="cat-nav">
+        <div class="nav-item search" style="display:none;">搜索</div>
+        <% for (var i = 0, l = data.list.length; i < l; i++) {%>
+            <div class="nav-item <%= i === 0 ? 'active' : ''%>" data-symbol="<%= data.list[i].name %>" title="<%= data.list[i].desc %>">
+                <%= data.list[i].desc %>
+            </div>
+            <% } %>
+    </div>
+    <div class="cat-content-wrapper" id="J_CatContent">
+        <div class="cat-content" id="J_CatContainer">
+            <div class="cat-item clearfix">
+                <span class="symbol">XTIUSD</span>
+                <span class="name">纽约原油</span>
+                <span class="add J_Add">添加</span>
+            </div>
+        </div>
+        <div class="cat-content clearfix" id="J_SuggestInner">
+        </div>
+    </div>
+</div>

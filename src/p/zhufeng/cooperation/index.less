@@ -1,0 +1,83 @@
+@import '../../../variable.less';
+.reset();
+body {
+    padding-top: 90px;
+}
+
+.zhufeng-header();
+.zhufeng-footer();
+.content {
+    min-width: 1100px;
+    .content-inner {
+        width: 1100px;
+        margin: 0 auto;
+        padding-bottom: 136px;
+        /*height: 600px;*/
+        background: url(../../../../img/zhufeng-cooperation-bg.png) 0 0 no-repeat;
+        .hd {
+            padding-top: 167px;
+            padding-left: 490px;
+            height: 192px;
+            .desc {
+                line-height: 36px;
+                font-size: 24px;
+                color: #333333;
+            }
+        }
+        .bd {
+            padding-left: 266px;
+            p {
+                line-height: 26px;
+                font-size: 18px;
+                color: #666666;
+            }
+            .wrapper {
+                margin-top: 16px;
+                &:first-child {
+                    margin-top: 12px;
+                }
+                .error {
+                    color: red;
+                    font-size: 14px;
+                    padding-left: 16px;
+                    line-height: 40px;
+                }
+            }
+            input {
+                width: 552px;
+                height: 18px;
+                border: 1px solid #f6f6f6;
+                background: #f2f2f2;
+                .border-radius(2px);
+                font-size: 18px;
+                color: #666666;
+                padding: 20px 0;
+                padding-left: 16px;
+                outline: 0;
+            }
+            textarea {
+                width: 552px;
+                height: 160px;
+                border: 1px solid #f6f6f6;
+                background: #f2f2f2;
+                .border-radius(2px);
+                padding: 14px 0;
+                font-size: 18px;
+                line-height: 30px;
+                color: #666666;
+                padding-left: 16px;
+            }
+            .submit {
+                background: #2e6495;
+                border-color: #2e6495;
+                -webkit-box-shadow: 2px 2px 2px #eee;
+                box-shadow: 2px 2px 2px #eee;
+                color: #ffffff;
+                font-size: 30px;
+                padding: 0;
+                height: 60px;
+                width: 568px;
+            }
+        }
+    }
+}

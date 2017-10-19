@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>登录</title>
+  <meta charset="utf-8">
+  <meta name="keyword" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit">
+  <script src="../../src/lib/modernizr.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../src/p/webtrade/login/index.css">
+  
+  <script src="../../resources/r.js"></script>
+  <link rel="shortcut icon" href="../../resources/favicon.ico">
+</head>
+<body>
+  <header></header>
+  <div class="login_main">
+    <div class="login ">
+      <form method="post" id="J_Form" class="J_Form">
+        <p class="title">快捷登陆</p>
+        <div class="wrapper J_Wrapper hover">
+          <input class="username J_Username tel" type="text" placeholder="注册手机号" disabled></input>
+          <span class="icon phone"></span>
+        </div>
+        <div class="wrapper J_Wrapper hover">
+          <input class="name J_Name " type="text" placeholder="昵称" disabled></input>
+          <span class="icon phone"></span>
+        </div>
+        <div class="wrapper J_Wrapper">
+          <input class="real-password J_RealPassword" type="password" placeholder="实盘交易密码"></input>
+          <span class="icon password"></span>
+        </div>
+        <div class="wrapper submit-wrapper J_SubmitWrapper J_Wrapper">
+          <input class="submit J_Submit" type="submit" value="登录->">
+        </div>
+        <div class="forget_tishi">忘记密码? <a class="toforget">请点击此处重置</a></div>
+        <div class="reg_tishi">不是您的账户? <a class="toregster J_Switch">请点击此切换账户</a></div>
+      </form>
+    </div>
+    <div class="regster ">
+      <form method="post" id="J_RegForm" class="J_RegForm">
+        <p class="title"><span class="back"><-</span>注册</p>
+        <div class="wrapper J_Wrapper hover">
+          <input class="username J_Username tel" type="text" placeholder="注册手机号"></input>
+          <span class="icon phone"></span>
+        </div>
+        <div class="wrapper J_Wrapper hover">
+          <input class="inv_code" type="text" placeholder="输入邀请码"></input>
+        </div>
+        <div class="wrapper J_Wrapper">
+          <input class="email J_Email" type="text" placeholder="电子邮箱"></input>
+          <span class="icon password"></span>
+        </div>
+        <div class="wrapper J_Wrapper code-wrapper">
+          <input type="text" class="code short J_Code" placeholder="短信验证码" disabled>
+          <input type="button" class="get-code J_GetCode" data-val="1" value="获取验证码">
+        </div>
+        <div class="wrapper submit-wrapper J_SubmitWrapper J_Wrapper">
+          <input class="submit J_Submit" type="submit" value="注册->">
+        </div>
+        <div class="image-captcha" id="J_ImageCaptcha">
+          <div class="image-captcha-center" id="J_ImageCaptcha-mask">
+            <p>请输入图中数字验证码:</p>
+            <div class="wrapper clearfix code-wrapper">
+              <input class="captcha-text" type="text" placeholder="验证码" name="captcha">
+              <img class="captcha" src="">
+              <p id="captcha-message"></p>
+              <div>
+                <input class="get-captcha disable" type="button" value="确认">
+                <input class="close-captcha" type="button" value="取消">
+              </div>
+              <!--<span class="icon error-icon"></span>-->
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="forget password-wrapper J_PasswordWrapper animation-vex">
+      <form method="post" id="J_ForgetForm" class="J_ForgetForm">
+        <p class="title"><span class="back"><-</span>重置交易密码</p>
+        <div class="wrapper J_Wrapper hover">
+          <input class="username J_Username tel" type="text" placeholder="注册手机号"></input>
+          <span class="icon phone"></span>
+        </div>
+        <div class="  validate-wrapper">
+          <input type="password" class="J_Password" placeholder="请输入新的实盘交易密码">
+        </div>
+        <div class="validate-wrapper">
+          <input type="password" class="J_RePassword" placeholder="请确认交易密码">
+        </div>
+        <div class="  validate-wrapper code-wrapper">
+          <input class="code J_Code" type="text" placeholder="输入短信验证码">
+          <input type="button" class="get-code J_GetCode" data-val="1" value="获取验证码">
+        </div>
+        <div class=" validate-wrapper">
+          <input class="submit J_Confirm confirm" type="button" value="重置交易密码->">
+        </div>
+        <div class="image-captcha" id="J_ImageCaptcha">
+          <div class="image-captcha-center" id="J_ImageCaptcha-mask">
+            <p>请输入图中数字验证码:</p>
+            <div class="wrapper clearfix code-wrapper">
+              <input class="captcha-text" type="text" placeholder="验证码" name="captcha">
+              <img class="captcha" src="">
+              <p id="captcha-message"></p>
+              <div>
+                <input class="get-captcha disable" type="button" value="确认">
+                <input class="close-captcha" type="button" value="取消">
+              </div>
+              <!--<span class="icon error-icon"></span>-->
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <div class="footer">
+  </div>
+  <script src="../../src/lib/lib.js"></script>
+  <script src="../../src/invwebtrade.config.dev.js"></script>
+  <script src="../../build/webtrade/login.js"></script>
+  <script type="text/javascript">
+    $(function () {
+//      $(".toregster").click(function () {
+//        var parent = $(this).parents(".login");
+//        parent.removeClass("bounceInLeft").addClass("bounceOutLeft");
+//        $(".regster").removeClass("bounceOutRight").addClass("bounceInRight");
+//      });
+      $(".toforget").click(function () {
+        var parent = $(this).parents(".login");
+        parent.removeClass("bounceInLeft").addClass("bounceOutLeft");
+        $(".forget").removeClass("bounceOutRight").addClass("bounceInRight");
+      });
+      $(".back").click(function () {
+        var parent = $(this).parents(".regster,.forget");
+        parent.removeClass("bounceInRight").addClass("bounceOutRight");
+        $(".login").removeClass("bounceOutLeft").addClass("bounceInLeft");
+      });
+    });
+  </script>
+</body>
+
+</html>

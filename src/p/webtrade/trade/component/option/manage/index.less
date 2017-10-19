@@ -1,0 +1,114 @@
+.manage-wrapper {
+  border: 1px solid #c9cbcd;
+  position: absolute;
+  top: 0;
+  right: 50px;
+  width: 282px;
+  z-index: 10000;
+  display: none;
+  background: #fff;
+  .close,
+  .up,
+  .del {
+    cursor: pointer;
+    font-family: 'iconfont';
+    float: right;
+    width: 40px;
+    text-align: center;
+    font-size: 22px;
+    color: #999;
+  }
+  .hd {
+    background: #f0f3f6;
+    position: relative;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 10px;
+    font-size: 14px;
+    color: #000;
+    border-bottom: 1px solid #e1e1e1;
+    p {
+      float: left;
+      width: 100px;
+    }
+  }
+  .del {
+    color: #eb351b;
+  }
+  .up {
+    &:hover {
+      color: #7ec7e5
+    }
+  }
+  .close-submit {
+    color: #7ec7e5;
+  }
+  .cat-item {
+    position: relative;
+    line-height: 36px;
+    height: 36px;
+    padding: 12px 10px 12px 10px;
+    font-size: 14px;
+    color: #666;
+    &:nth-child(2n) {
+      background: #f1f4f6;
+    }
+    &:hover {
+      background: #ddf3fa;
+      &:before {
+        content: '';
+        width: 2px;
+        height: 61px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #7ec7e5;
+      }
+    }
+  }
+  .symbol {
+    float: left;
+    width: 90px;
+    height: 36px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .name {
+    float: left;
+    padding-left: 2px;
+    width: 88px;
+    height: 36px;
+    overflow: hidden;
+  }
+  .add {
+    width: 100px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    font-size: 18px;
+    color: #fff;
+    background: #43b3dc;
+    text-align: center;
+    cursor: pointer;
+  }
+  // .action-wrapper {
+  //   margin-right: 10px;
+  // }
+}
+
+.iconfont {
+  font-family: 'iconfont';
+}
+
+.iconfont {
+  @font-face {
+    font-family: 'iconfont';
+    src: url('//at.alicdn.com/t/font_1472483386_1027544.eot');
+    /* IE9*/
+    src: url('//at.alicdn.com/t/font_1472483386_1027544.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//at.alicdn.com/t/font_1472483386_1027544.woff') format('woff'), /* chrome、firefox */
+    url('//at.alicdn.com/t/font_1472483386_1027544.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/font_1472483386_1027544.svg#iconfont') format('svg');
+    /* iOS 4.1- */
+  }
+}

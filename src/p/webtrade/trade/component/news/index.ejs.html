@@ -1,0 +1,32 @@
+<div class="news-inner">
+	<div class="hd">
+		<h2>资讯速递</h2>
+	</div>
+	<% function formatHtml(str) { return str.replace(/\\/g,""); } %>
+	<div class="bd">
+		<!-- <div class="loading-wrapper" id="J_Loading-roll">
+			<img class="img-loading" src="../../../../../../img/roll-loading.svg">
+			<p class="desc-loading">加载中...</p>
+		</div> -->
+		<ul class="list J_List">
+			<% data.list.forEach( function(item, index) {%>
+				<li class="item clearfix <%= item.isFirst && 'first' %>">
+					<p class="time"> <%= item.time.split(' ')[1] %> </p>
+
+					<div class="clearfix">
+
+						<div class="left"> <%= formatHtml(item.content) %> </div>
+						<div class="right"></div>
+						<div class="progress">
+							<span class="circle iconfont icon-icon-bar-chart-o"></span>
+						</div>
+
+					</div>
+				</li>
+			<% }); %>
+		</ul>
+		<% if (data.list.length == 0) {%>
+		<p class="no-list">当前没有资讯消息</p>
+		<%}%>
+	</div>
+</div>

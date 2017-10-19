@@ -1,0 +1,176 @@
+@import '../../../../../variable.less';
+.attribute-wrapper {
+  width: 300px;
+  height: 530px;
+  .border-radius(1px);
+  background: #fff;
+  overflow: hidden;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 102;
+  border: 1px solid #ccc;
+  .hd {
+    position: relative;
+    h2 {
+      line-height: 34px;
+      padding-left: 13px;
+      color: #fff;
+      font-size: 0.75rem;
+      background: #3ab8e6;
+      border-bottom: 1px solid #ccc;
+    }
+    .close {
+      position: absolute;
+      width: 18px;
+      height: 34px;
+      line-height: 34px;
+      right: 8px;
+      top: 0;
+      color: #fff;
+      cursor: pointer;
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjE4NkFBMkI4N0Q3NzExRTc5QzhEQjM2NkRDQkM0QzAzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjE4NkFBMkI5N0Q3NzExRTc5QzhEQjM2NkRDQkM0QzAzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MTg2QUEyQjY3RDc3MTFFNzlDOERCMzY2RENCQzRDMDMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MTg2QUEyQjc3RDc3MTFFNzlDOERCMzY2RENCQzRDMDMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5Oz5QdAAAAfUlEQVR42ozS3QnAIAwEYN2hw+rz4Z5uUDpBqtRAa+9qAwFRP+JPgpmFllvLNMYq09gXHOx2BQTAWO/7tj6R7RkQwCP7QiEwElD8eApWBmbE4AswFEmFOuYlgqgEhbC4E2bEXom9Hhylr0urf7p3RFl0xOEd4TD/7b1TgAEAqdBF71hE4soAAAAASUVORK5CYII=) ;
+		background-repeat:no-repeat;
+		background-position-y: 10px;
+    }
+  }
+  .bd {
+    padding: 5px 2.08rem 0 2.08rem;
+    .wrapper {
+      height: 4.38rem;
+      padding-top: 1rem;
+      border-bottom: 1px solid #ccc;
+        &.wrapper:nth-child(1){
+            padding-top: 0rem
+        }
+      .fl {
+        float: left;
+        width: 6.6rem;
+        margin-left: 2px;
+        line-height: 1.25rem;
+        font-size: 0.75rem;
+        color: #7d7d7d;
+        margin-top: 1rem;
+        &.second {
+          width: 5.2rem;
+		  float: right;
+        }
+      }
+      &.commision-wrapper,
+      &.create-wrapper,
+      &.time {
+        height: 4.38rem;
+        p {
+          line-height: 0.75rem;
+          font-size: 0.75rem;
+          color: #7d7d7d;
+        }
+        .left {
+          /*width: 112px;*/
+        }
+      }
+      &.create-wrapper,
+      &.time {
+        .right,
+        .left {
+          p {
+            color: #848484;
+          }
+        }
+      }
+    }
+    .strong {
+      color: #a0a0a0;
+      margin: 0 2px;
+    }
+    .wrapper {
+      &.time {
+        .left {
+          text-align: left;
+          padding-right: 18px;
+        }
+        .right {
+          text-align: left;
+          padding-left: 12px;
+        }
+        .arrow {
+//          background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAYAAACaq43EAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAANFJREFUeNpiPHPmDAOVQTsQVwHxf3yKmBioDyqAeDoQM9PbYhBIB+IlQMxGb4tBIAKI1wMxF70tBgEvIN4BxPz0thgEbIF4PxCLoVv8n8oYGzAE4kNALEdPH8OAOhAfhtJ0tZgB6mOQzw3pbTEDNK73D4TFDAMR1CDwCoidWOhs6SMgdgfiG/T08U0gtgNZCuKAfMxIZQuw5eXzQOwJxC/pGcdHQHGKbCk9LN4OjdMP9EzVK4E4AIi/0TM7zQLiaCD+Rc983AXEGUD8F58igAADAG6aM6KqLqbBAAAAAElFTkSuQmCC) 0 0 no-repeat;
+//          background-size: 20px 16px;
+          position: absolute;
+          width: 2rem;
+          height: 1px;
+          left: 98px;
+          top: 20px;
+          border-bottom: 1px solid #e0e0e0;
+        }
+      }
+      .clearfix {
+        margin-top: 5px;
+        padding-bottom: 12px;
+        position: relative;
+        .bar {
+          position: absolute;
+          left: 114px;
+          top: 16px;
+          content: '';
+          width: 0;
+          height: 2rem;
+          border-left: 1px solid #ddd;
+        }
+      }
+      .wrapper-swap {
+        padding-top: 12px;
+      }
+      .left,
+      .right {
+        width: 87px;
+        font-size: 0.75rem;
+        text-align: center;
+        overflow: hidden;
+        p {
+          line-height: 1.25rem;
+          height: 1.25rem;
+          overflow: hidden;
+        }
+      }
+      .left {
+        float: left;
+        color: #16c446;
+        padding-right: 20px;
+        .close-time {
+          margin-right: 15px;
+        }
+      }
+      .right {
+        float: right;
+        padding-left: 20px;
+      }
+      .up {
+        p {
+          color: #f9584a;
+        }
+      }
+      .down {
+        p {
+          color: #25b9a8;
+        }
+      }
+    }
+  }
+  .ft {
+    line-height: 52px;
+    text-align: center;
+    color: #a39db0;
+    font-size: 0.75rem;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    height: 52px;
+    .delivery {
+      line-height: 22px;
+      font-size: 0.75rem;
+      &.strong {
+        color: #666666;
+      }
+    }
+  }
+}

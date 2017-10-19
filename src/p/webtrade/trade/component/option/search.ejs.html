@@ -1,0 +1,13 @@
+<% data.forEach(function(item) { %>
+
+<div class="cat-item clearfix">
+    <span class="symbol"><%= item.symbol %></span>
+    <span class="name" title="<%= item.name %>"><%= item.name %></span>
+   	<% if (item.add) {%>
+    <span class="add J_Add" data-symbol="<%= item.symbol %>">添加</span>
+    <% } else {%>
+    <span class="del J_Del" data-symbol="<%= item.symbol %>">删除</span>
+    <% } %>
+</div>
+<% }); %>
+

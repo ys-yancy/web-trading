@@ -1,0 +1,199 @@
+@import '../../../variable.less';
+.reset();
+body {
+    padding-top: 90px;
+}
+
+.zhufeng-header();
+.zhufeng-footer();
+.content {
+    min-width: 1100px;
+    .content-inner {
+        width: 1100px;
+        margin: 0 auto;
+        padding-top: 14px;
+        .moving {
+            line-height: 100px;
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            line-height: 150px;
+            font-size: 24px;
+            color: #333333;
+            text-align: center;
+        }
+        .img-wapper-outer {
+            float: left;
+            margin-top: 3px;
+            width: 536px;
+            height: 318px;
+        }
+        .img-wrapper {
+            width: 486px;
+            height: 268px;
+            border: 5px solid #fff;
+            -webkit-text-shadow: 5px 5px 5px #eee;
+            text-shadow: 5px 5px 5px #eee;
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .detail {
+            .time-wrapper {
+                text-align: right;
+                font-size: 20px;
+                line-height: 22px;
+                color: #2f679a;
+                .time {
+                    margin-left: 24px;
+                }
+            }
+            p {
+                margin-top: 30px;
+                font-size: 18px;
+                line-height: 30px;
+                color: #666666;
+                &.first {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+    .page-nav {
+        position: relative;
+        padding-top: 150px;
+        padding-bottom: 68px;
+        ul {
+            position: absolute;
+            right: 0;
+            width: 122px;
+        }
+        a,
+        span {
+            float: left;
+            color: #666;
+            font-size: 20px;
+            font-weight: normal;
+            text-align: center;
+            border: 1px solid #e2e2e2;
+            color: #5a5a5a;
+            text-decoration: none;
+            width: 43px;
+            height: 40px;
+            line-height: 40px;
+            margin: 0 16px 0 0;
+            border-radius: 3px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            background: #f3f3f3;
+            /* Old browsers */
+            background: -moz-linear-gradient(top, #ffffff 0%, #f3f3f3 100%);
+            /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #efefef));
+            /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #ffffff 0%, #f3f3f3 100%);
+            /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #ffffff 0%, #f3f3f3 100%);
+            /* Opera11.10+ */
+            background: -ms-linear-gradient(top, #ffffff 0%, #f3f3f3 100%);
+            /* IE10+ */
+            background: linear-gradient(top, #ffffff 0%, #f3f3f3 100%);
+            /* W3C */
+        }
+        a:hover {
+            text-decoration: none;
+            background: #2f679a;
+            color: #fff;
+            border-color: #2f679a;
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 1), 0 0 2px rgba(0, 0, 0, 0.3) inset;
+        }
+        .current {
+            background: #2f679a;
+            color: #FFF;
+            border-color: #2f679a;
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 1), 0 0 2px rgba(0, 0, 0, 0.3) inset;
+            cursor: default;
+        }
+        .ellipse {
+            background: none;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            font-weight: bold;
+            cursor: default;
+        }
+        .disabled span {
+            background: #e2e2e2;
+            border-color: #e2e2e2;
+            box-shadow: none;
+        }
+        a,
+        span {
+            &.prev,
+            &.next {
+                font-family: 'iconfont';
+                font-size: 14px;
+            }
+        }
+        .disabled {
+            a,
+            span {
+                &.prev,
+                &.next {
+                    color: #bdbdbd;
+                }
+            }
+        }
+    }
+}
+
+.list {
+    min-width: 1100px;
+    background: #f0f0f0;
+    .list-inner {
+        width: 1100px;
+        margin: 0 auto;
+        padding: 60px 0;
+    }
+    li {
+        position: relative;
+        font-size: 20px;
+        color: #333333;
+        line-height: 50px;
+        padding-left: 50px;
+        &.active,
+        &:hover {
+            .circle {
+                border-color: #f35656;
+            }
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .circle {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            border: 6px solid #cccccc;
+            .border-radius(50%);
+            background: #fff;
+        }
+    }
+}
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('//at.alicdn.com/t/font_1448805067_3348234.eot');
+    /* IE9*/
+    src: url('//at.alicdn.com/t/font_1448805067_3348234.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//at.alicdn.com/t/font_1448805067_3348234.woff') format('woff'), /* chrome、firefox */
+    url('//at.alicdn.com/t/font_1448805067_3348234.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/font_1448805067_3348234.svg#iconfont') format('svg');
+    /* iOS 4.1- */
+}

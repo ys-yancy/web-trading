@@ -1,0 +1,43 @@
+@import '../../../variable.less';
+.reset();
+.header();
+.dialog();
+.dialog-exit {
+    .icon {
+        background: url(../../../../img/warn-icon.png) 0 0 no-repeat
+    }
+}
+
+.content {
+    min-width: 638px;
+    .content-inner {
+        position: relative;
+        width: 638px;
+        margin: 0 auto;
+        padding-bottom: 50px;
+        .service {
+            position: fixed;
+            top: 230px;
+            right: 144px;
+            width: 87px;
+            height: 87px;
+            background: url(../../../../img/service-bg.png) 0 0 no-repeat;
+        }
+        h2 {
+            margin-top: 7px;
+            line-height: 64px;
+            font-size: 20px;
+        }
+        div {
+            margin-top: 22px;
+            font-size: 20px;
+        }
+        p {
+            line-height: 22px;
+            font-size: 16px;
+            color: #333;
+        }
+    }
+}
+
+.footer();

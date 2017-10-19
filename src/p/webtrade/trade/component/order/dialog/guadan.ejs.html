@@ -1,0 +1,24 @@
+<div class="hd">
+  <h2>删除挂单</h2>
+</div>
+<div class="bd">
+  <ul>
+    <li>编号：<%= data.ticket %></li>
+    <li>操作：<%= data.cmd == 'buy' ? '买涨' : '买跌' %> <%= data.cmd %></li>
+    <li>品种：<%= data.name %> <%= data.symbol %></li>
+    <li>价格：<%= data.openPrice %></li>
+  </ul>
+</div>
+<div class="ft">
+  <!-- <span class="radio-wrapper J_Radio <%= data.openOneKey ? 'active': '' %>">
+    <span class="radio">
+      <span class="radio-inner"></span>
+    </span>
+  </span>
+  <span class="desc">开启一键删除</span>
+  <span class="extra">(可在设置中取消）</span> -->
+  <div class="btn-wrapper">
+    <button class="cancel disable J_Close">取消</button>
+    <button class="confirm J_Confirm">确认</button>
+  </div>
+</div>

@@ -1,0 +1,98 @@
+<div class="create-order unfold <%= data.status.className || data.status.type %> animiaton-vex" id="J_CreateOrder">
+  <div class="extra">
+    <table>
+      <tbody>
+        <tr>
+          <td class="symbol-wrapper">
+            <p class="name">
+              <%= data.symbolValue.policy.name %>
+            </p>
+            <p class="symbol">
+              <%= data.symbolValue.policy.symbol %>
+            </p>
+          </td>
+          <td class="bid-price J_Price">
+            <span class="J_BidPrice"><%= data.prices.bidPrice.str %><%= data.prices.bidPrice.substr %></span>
+          </td>
+          <td class="ask-price J_Price">
+            <span class="J_AskPrice"><%= data.prices.askPrice.str %><%= data.prices.askPrice.substr %></span>
+          </td>
+          <td class="percent <%= parseFloat(data.rate) > 0 ? 'up': '' %>">
+            <% if(data.status.type === 'close') {%>
+              <span class="percent-val disabled"><%= data.status.reason %></span>
+            <%} else {%>
+              <span class="percent-val"><%= data.rate %></span>
+            <%}%>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="hd">
+    <% if( data.isHasFixedMargin ) {%>
+      <span class="leverage fixedMarginRatio">1手保证金：<%= data.fixedMarginRatio %>美元</span>
+    <%} else {%>
+      <span class="leverage" data-leverage='<%= data.leverage %>'>杠杆：<%= data.leverage %>倍</span>
+    <%}%>
+    <span class="lot-size">1手=<%= data.symbolValue.policy.lot_size %><%= data.symbolValue.policy.unit %></span>
+    <span class="more J_More">更多信息</span>
+  </div>
+  <div class="volume-wrapper wrapper">
+    <input class="J_Volume" id="J_Volume" type="number" value="1.00" step="any">
+    <span class="minus J_Minus"></span>
+    <span class="add J_Add"></span>
+    <span class="volume-money J_VolumeMoney" id="J_VolumeMoney">$3.00</span>
+  </div>
+  <% if (data.status.type === 'close') {%>
+    <div class="rest-info">
+      <p>
+        <%= data.status.reason %>
+      </p>
+      <p class="date">
+        <%= data.status.start %>&nbsp;开市</p>
+    </div>
+    <% } else if (data.status.type === 'more-money') { %>
+      <div class="balance">余额不足</div>
+      <% } else if (data.status.type=== 'simulate') {%>
+        <div class="simulate-desc">限模拟</div>
+        <% } %>
+          <div class="guadan-wrapper wrapper">
+            <span class="radio-wrapper J_Radio">
+            <span class="radio">
+              <span class="radio-inner"></span>
+            </span>
+            <span class="desc">挂单</span>
+            </span>
+            <input type="number" disabled id="J_GuadanPrice" step="any" placeholder="">
+            <div class="J_GuadanPriceWrapper guandan-price-wrapper">
+              当前价格:<span class="J_BidPrice bid-price"></span><span class="J_AskPrice ask-price"></span>
+            </div>
+          </div>
+          <div class="profit-wrapper wrapper">
+            <p class="clearfix">止盈价格
+              <span class="desc">目标盈利( $ )：<span class="J_Num">0.00</span></span>
+            </p>
+            <input type="number" class="J_Profit" id="J_ProfitPrice" placeholder="请输入止盈价格" step="any">
+          </div>
+          <div class="stoploss-wrapper wrapper">
+            <p class="clearfix">止损价格
+              <span class="desc">预期亏损( $ )：<span class="J_Num">0.00</span></span>
+            </p>
+            <input type="number" class="J_Stoploss" id="J_StoplossPrice" placeholder="请输入止损价格" step="any">
+          </div>
+          <div class="action-wrapper wrapper clearfix">
+            <div class="btn up J_Btn">
+              <p class="title">买涨</p>
+              <p>
+                <span class="J_AskPriceInt"><%= data.prices.askPrice.str %></span><span class="strong J_AskPriceFloat"><%= data.prices.askPrice.substr %></span>
+              </p>
+            </div>
+            <div class="btn down J_Btn">
+              <p class="title">买跌</p>
+              <p> <span class="J_BidPriceInt"><%= data.prices.bidPrice.str %></span><span class="strong J_BidPriceFloat"><%= data.prices.bidPrice.substr %></span></p>
+            </div>
+          </div>
+          <p class="now">点击 买涨 买跌 立即下单</p>
+          <span class="triangle J_Fold"></span>
+</div>
+</div>

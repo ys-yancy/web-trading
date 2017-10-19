@@ -1,0 +1,11 @@
+<% for (var i = 0, l = data.length; i < l; i++) {%>
+    <% var item = data[i]; %>
+    <div class="cat-item clearfix">
+        <span class="symbol"><%= item.policy.symbol %></span>
+        <span class="name"><%= item.policy.name %></span>
+        <span class="action-wrapper">
+          <span class="del J_Del iconfont" data-symbol="<%= item.policy.symbol %>">&#xe601;</span>
+          <span class="up J_Up iconfont" data-symbol="<%= item.policy.symbol %>">&#xe600;</span>   
+        </span>
+    </div>
+<% } %>

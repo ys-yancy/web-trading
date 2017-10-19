@@ -1,0 +1,192 @@
+@import '../../../variable.less';
+.reset();
+html,
+body {
+  background: #eff3f4;
+}
+/** {
+  box-sizing: border-box
+}*/
+
+body, html, .login_main {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.login_main > div {
+  width: 400px;
+  //height: 400px;
+  /* float: left; */
+  margin: 0 auto;
+  display: inline-block;
+  position: absolute;
+  top: 20%;
+  left: calc(~'50% - 200px');
+  z-index: 1;
+  background-color: #fff;
+  padding: 35px 45px;
+  p.title {
+    font-size: 25px;;
+    color: #666;;
+    margin-bottom: 30px;
+  }
+  input {
+    border-radius: 3px;
+  }
+  .username, .real-password, .submit,.email,.J_Password,.J_RePassword,.J_Name{
+    width: 95%;
+    height: 40px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding-left: 5%;
+    color: #ccc;
+    font-size: 16px;
+
+  }
+  .submit {
+    background-color: #00A2E2;
+    border: none;
+  }
+  .code {
+    width: 60%;
+    height: 40px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding-left: 5%;
+    margin-right: 3%;
+    float: left;
+    color: #ccc;
+    font-size: 16px;
+  }
+  .get-code {
+    height: 40px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    width: 30%;
+    float: right;
+    color: #fff;
+    background-color: orange;
+    font-size: 16px;
+    border: none;
+  }
+  .inv_code{
+    display: none;
+  }
+  .submit {
+    color: #fff;
+  }
+  #J_ImageCaptcha{
+    display: none;
+  }
+  .wrapper p{
+    margin-bottom: 10px;
+  }
+}
+
+.forget_tishi, .reg_tishi {
+  color: #CCCCCC;
+  font-size: 14px;;
+  margin-bottom: 10px;
+}
+
+.forget_tishi a, .reg_tishi a, .back {
+  cursor: pointer;
+}
+
+.toforget, .toregster {
+  color: #00A2E2;
+}
+
+.regster, .forget {
+  opacity: 0;
+}
+
+.login_main .login {
+  z-index: 2;
+}
+
+@keyframes bounceInRight {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    transform: translate3d(3000px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    z-index: 3;
+    transform: none;
+  }
+}
+
+.bounceInRight {
+  animation-name: bounceInRight;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes bounceInLeft {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    transform: translate3d(-3000px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    z-index: 3;
+    transform: none;
+  }
+}
+
+.bounceInLeft {
+  animation-name: bounceInLeft;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes bounceOutLeft {
+  from {
+    opacity: 1;
+    transform: translate3d(20px, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(-2000px, 0, 0);
+  }
+}
+
+.bounceOutLeft {
+  animation-name: bounceOutLeft;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes bounceOutRight {
+  from {
+    opacity: 1;
+    transform: translate3d(-20px, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(2000px, 0, 0);
+  }
+}
+
+.bounceOutRight {
+  animation-name: bounceOutRight;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}

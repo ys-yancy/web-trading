@@ -1,0 +1,30 @@
+<div class="about-inner">
+	<div class="hd">
+		<h2>关于我们</h2>
+	</div>
+	<div class="bd">
+		<div class="img-wrapper-outer">
+			<div class="img-wrapper">
+				<img class="img" src="<%= getAbountImageUrl() %>">
+			</div>
+		</div>
+		<div class="desc" id="J_Desc"><%= getAbountTitleContent() %></div>
+		<ul class="list J_List">
+			<% data.list.forEach( function(item, index) {%>
+				<li class="item clearfix">
+					<p class="time"> <%= item.date %> </p>
+
+					<div class="clearfix">
+
+						<div class="left"> <%= item.content %> </div>
+						<div class="right"></div>
+						<div class="progress">
+							<span class="circle"></span>
+						</div>
+
+					</div>
+				</li>
+			<% }); %>
+		</ul>
+	</div>
+</div>

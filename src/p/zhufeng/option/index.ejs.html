@@ -1,0 +1,20 @@
+<% data.forEach(function(item, index) {%>
+<tr>
+  <td><%= item.policy.name %></td>
+  <td class="td-symbol" title="<%= item.policy.symbol %>"><%= item.policy.symbol %></td>
+  <td><%= item.policy.default_slippage %></td>
+  <td><%= parseInt(1/item.policy.real_max_leverage * 100) %>%</td>
+  <td class="width-248">
+    <p class="clearfix">
+      <span><%= item.policy.long_swap ? parseFloat(item.policy.long_swap).toFixed(2) : '无' %></span><span class="right"><%= item.policy.short_swap ? parseFloat(item.policy.short_swap).toFixed(2) : '无' %></span>
+    </p>
+  </td>
+  <td><%= item.policy.min_vol %></td>
+  <td><%= item.policy.lot_size %><%= item.policy.unit %></td>
+  <td class="width-160">
+    <p><%= item.close_time[0].start %></p>
+    <p>到</p>
+    <p><%= item.close_time[0].end %></p>
+  </td>
+</tr>
+<% }); %>

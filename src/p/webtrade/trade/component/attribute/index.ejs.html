@@ -1,0 +1,101 @@
+<section class="attribute-wrapper" id="J_Attribute" style="display:none;">
+  <div class="attribute">
+    <div class="hd">
+      <h2><%= data.policy.name %> 品种属性</h2>
+      <span class="close"></span>
+    </div>
+    <div class="bd">
+      <div class="wrapper clearfix">
+        <div class="fl">
+          <% if(data.isHasFixedMargin) {%>
+            <p>1手保证金</p>
+            <p><span class="strong deta-leverage"><%= data.policy.fixed_margin_ratio %></span>美元</p>
+          <%} else {%>
+            <p>交易杠杆</p>
+            <p><span class="strong deta-leverage"><%= data.leverage %></span>倍</p>
+          <%}%>
+        </div>
+        <div class="fl second">
+          <p><span class="strong">1</span>标准手：<span class="strong"></p>
+          <p><%= data.policy.lot_size %></span>
+            <%= data.policy.unit %>
+          </p>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="fl">
+          <p>最小交易量：</p>
+          <p> <span class="strong"><%= data.policy.min_vol %></p>
+        </div>
+        <div class="fl second">
+          <p>最大交易量：</p>
+          <p><span class="strong"><%= data.policy.max_vol %></span></p>
+        </div>
+      </div>
+      <div class="wrapper commision-wrapper">
+        <p>隔夜利息（每交易1标准手）:</p>
+        <div class="clearfix wrapper-swap">
+          <div class="left down">
+              <p>买跌</p>
+            <p class="swap">
+              <%= data.policy.short_swap ? parseFloat(data.policy.short_swap).toFixed(2) : '无' %>
+            </p>
+            
+          </div>
+          <div class="right up">
+              <p>买涨</p>
+            <p class="swap">
+              <%= data.policy.long_swap ? parseFloat(data.policy.long_swap).toFixed(2) : '无' %>
+            </p>
+            
+          </div>
+          <span class="bar"></span>
+        </div>
+      </div>
+      <div class="wrapper create-wrapper">
+        <p>交易手续费（每交易1标准手）:</p>
+        <div class="clearfix wrapper-swap">
+          <div class="left">
+            <p class="swap">
+              <%= data.ticketOpen || '0.00' %>
+            </p>
+            <p>建仓</p>
+          </div>
+          <div class="right">
+            <p class="swap">
+              <%= data.ticketClose %>
+            </p>
+            <p>平仓</p>
+          </div>
+          <span class="bar"></span>
+        </div>
+      </div>
+      <div class="wrapper time">
+        <p>最近休市时间:</p>
+        <div class="clearfix">
+          <div class="left">
+            <p><span><%= data.close_time[0] && data.close_time[0].start.split(' ')[0] %></span></p>
+            <p class="close-time"><span><%= data.close_time[0] && data.close_time[0].start.split(' ')[1] %></span></p>
+          </div>
+          <div class="right">
+            <p><span><%= data.close_time[0] && data.close_time[0].end.split(' ')[0] %></span></p>
+            <p><span><%= data.close_time[0] && data.close_time[0].end.split(' ')[1] %></span></p>
+          </div>
+          <span class="arrow"></span>
+        </div>
+      </div>
+    </div>
+    <div class="ft">
+      <% if (data.policy.delivery_time && data.future) {%>
+        <p class="delivery">交割时间:</p>
+        <p class="delivery strong">
+          <%= data.policy.delivery_time %>
+        </p>
+        <%} else {%>
+          <p>
+            <%= '该品种无需交割' %>
+          </p>
+          <%} %>
+    </div>
+  </div>
+</section>

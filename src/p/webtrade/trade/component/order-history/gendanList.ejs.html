@@ -1,0 +1,87 @@
+<% for (var key in data.gendanObj) {%>
+  <% data.gendanObj[key].forEach(function(item) {%>
+    <%if ( item.isTitle ) {%>
+      <tr class="gendan-tr J_GendanTitle">
+          <td colspan="14" class="title"><p class="gendan-title-desc">
+            跟单自 : <span class="gendan-follow-name"><%=item.followName%></span>
+            跟单数量 : <span class="gendan-follow-num"><%=item.followNum%></span>
+            跟单盈亏 : <span class="all-profit J_AllProfit" data-id='<%= item.expert_id %>'>- -</span>
+          </p></td>
+      </tr>
+    <%} else {%>
+      <% var up = item.cmd.indexOf('buy') !== -1 ? true : false %>
+      <tr class="J_Hover J_OrderItem" data-symbol="<%= item.symbol %>" data-order="<%= item.ticket %>">
+        <td class="id">
+          <%= item.ticket %>
+        </td>
+        <td class="symbol">
+          <p>
+            <%= item.symbolName %>
+          </p>
+          <p>
+            <%= item.symbol %>
+          </p>
+        </td>
+        <td class="type">
+          <% if (up) { %>
+            <span class="tag up"></span>
+            <p>买涨</p>
+            <p>BUY</p>
+            <% } else { %>
+              <span class="tag"></span>
+              <p>买跌</p>
+              <p>SELL</p>
+              <% } %>
+        </td>
+        <td class="volume">
+          <%= item.volume %>
+        </td>
+        <td class="total-profit <%= parseFloat(item.profit) + parseFloat(item.swap)  - parseFloat(item.commission) >0  ? '' : 'loss' %>">
+          <%= (parseFloat(item.profit) + parseFloat(item.swap)  - parseFloat(item.commission)).toFixed(2) %>
+        </td>
+        <td class="float-profit <%= item.profit > 0 ? '' : 'loss' %> J_Formate" data-order=<%=item.ticket %> data-id='<%= item.expert_id %>'>
+          <%= item.profit %>
+        </td>
+        <td class="end-type">
+          <%= item.closeTypeName %>
+        </td>
+        <td class="open-price">
+          <p>
+            <%= item.openPrice %>
+          </p>
+        </td>
+        <td class="end-price">
+          <%= item.closePrice %>
+        </td>
+        <td class="take-profit">
+          <p>
+            <%= parseFloat(item.takeProfit) == 0 ? '<p class="no">未设置</p>' : item.takeProfit %>
+          </p>
+        </td>
+        <td class="stop-loss">
+          <p>
+            <%= parseFloat(item.stopLoss) == 0 ? '<p class="no">未设置</p>' : item.takeProfit %>
+          </p>
+        </td>
+        <td class="swap">
+          <%= item.swap %>
+        </td>
+        <td class="commission">
+          <%= item.commission %>
+        </td>
+        <td class="date">
+          <p>
+            <%= item.openTime&&item.openTime %>
+          </p>
+
+        </td>
+        <td class="date">
+          <p>
+            <%= item.closeTime&&item.closeTime %>
+
+          </p>
+        </td>
+      </tr>
+    <%}%>
+  <%})%>
+<%}%>

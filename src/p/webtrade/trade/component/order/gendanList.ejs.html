@@ -1,0 +1,179 @@
+<% for (var key in data.gendanObj) {%>
+    <% data.gendanObj[key].forEach(function(item) {%>
+      <%if ( item.isTitle ) {%>
+        <tr class="gendan-tr J_GendanTitle">
+          <td colspan="14" class="title"><p class="gendan-title-desc">
+            跟单自 : <span class="gendan-follow-name"><%=item.followName%></span>
+            跟单数量 : <span class="gendan-follow-num"><%=item.followNum%></span>
+            跟单盈亏 : <span class="all-profit J_AllProfit" data-id='<%= item.expert_id %>'>- -</span>
+          </p></td>
+        </tr>
+      <%} else {%>
+        <% var up = item.cmd.indexOf('buy') !== -1 ? true : false %>
+        <% if(item.status === 'pending') {%>
+          <tr class="gd-ct-tr J_OrderItem" data-symbol="<%= item.symbol %>" data-order="<%= item.ticket %>">
+              <td class="id">
+                <%= item.ticket %>
+              </td>
+              <td class="symbol">
+               <!--  <% if (up) { %>
+                  <span class="tag up"></span>
+                <% } else { %>
+                  <span class="tag"></span>
+                <% } %> -->
+                <p>
+                  <%= item.symbolName %>
+                </p>
+                <p>
+                  <%= item.symbol %>
+                </p>
+              </td>
+
+              <td class="float-profit">无</td>
+               <td class="type">
+                <% if (up) { %>
+                  <span class="tag up"></span>
+                  <p>买涨</p>
+                  <p>BUY</p>
+                  <% } else { %>
+                    <span class="tag "></span>
+                    <p>买跌</p>
+                    <p>SELL</p>
+                    <% } %>
+              </td>
+              <td class="margin">无</td>
+              <td class="volume">
+                <%= item.volume %>
+              </td>
+              <td class="open-price">
+                <%= item.openPrice %>
+              </td>
+              <td class="current-price openTicket" data-symbol="<%= item.symbol.replace(/\./g, '--') %>">
+                <p class="openTicketPriceNum <%= up ? 'up' : '' %>"> - - </p>
+              </td>
+              <td class="take-profit">
+                <p>
+                  <span class="J_Edit">  <%= parseFloat(item.takeProfit) == 0 ? '点此设置' : item.takeProfit %></span>
+                </p>
+                <p class="edit-model">
+                  <input type="number">
+                  <button class="J_ConfirmEdit" data-type="profit">确定</button>
+                </p>
+              </td>
+              <td class="stop-loss">
+                <p>
+                  <span class="J_Edit">  <%= parseFloat(item.stopLoss) == 0 ? '点此设置' : item.stopLoss %></span>
+                </p>
+                <p class="edit-model">
+                  <input type="number">
+                  <button class="J_ConfirmEdit" data-type="profit">确定</button>
+                </p>
+              </td>
+              <td class="swap"><%= item.swap %></td>
+              <td class="commission"><%= item.commission %></td>
+              <td class="date">
+                <p>
+                  <%= item.openTime %>
+
+                </p>
+              </td>
+
+              <td class="action" align="center">
+                <span class="J_Action del" data-id="<%= item.ticket %>">删除</span>
+              </td>
+              <!-- <td class="action share"  align="center">
+                <span class="J_Share share" data-id="<%= item.ticket %>">分享</span>
+              </td> -->
+          </tr>
+        <%} else {%>
+          <tr class="J_Hover J_OrderItem <%= item.ticket %>" data-symbol="<%= item.symbol %>" data-order="<%= item.ticket %>">
+            <td class="id">
+              <%= item.ticket %>
+            </td>
+            <td class="symbol">
+             <!--  <% if (up) { %>
+                <span class="tag up"></span>
+              <% } else { %>
+                <span class="tag"></span>
+              <% } %> -->
+              <p>
+                <%= item.symbolName %>
+              </p>
+              <p>
+                <%= item.symbol %>
+              </p>
+
+
+            </td>
+            <td class="float-profit <%= item.profit > 0 ? '' : 'loss' %> J_Formate" data-order="<%= item.ticket %>" data-id='<%= item.expert_id %>'>
+              <span><%= item.profit.split('.')[0] %></span><span><%= item.profit.split('.')[1] %></span>
+            </td>
+
+            <td class="type">
+              <% if (up) { %>
+                <span class="tag up"></span>
+                <p>买涨</p>
+                <p>BUY</p>
+              <% } else { %>
+                <span class="tag"></span>
+                <p>买跌</p>
+                <p>SELL</p>
+                <% } %>
+            </td>
+            <td class="margin"><%= item.margin %></td>
+            <td class="volume">
+              <%= item.volume %>
+            </td>
+            <td class="open-price">
+              <!--<p>-->
+                <%= item.openPrice %>
+              <!--</p>-->
+            </td>
+            <td class="current-price openTicket" data-symbol="<%= item.symbol.replace(/\./g, '--') %>">
+              <p class="openTicketPriceNum <%= up ? 'up' : '' %>"> - - </p>
+            </td>
+            <td class="take-profit">
+              <p>
+
+                  <span class="J_Edit">  <%= parseFloat(item.takeProfit) == 0 ? '点此设置' : item.takeProfit %></span>
+              </p>
+              <p class="edit-model">
+                <input type="number" class="J_TakeprofitNumber">
+                <button class="J_ConfirmEdit" data-type="profit"></button>
+              </p>
+            </td>
+            <td class="stop-loss">
+              <p>
+
+                  <span class="J_Edit ">  <%= parseFloat(item.stopLoss) == 0 ? '点此设置' : item.stopLoss %></span>
+              </p>
+              <p class="edit-model">
+                <input type="number" class="J_StoplossNumber">
+                <button class="J_ConfirmEdit" data-type="stoploss">确定</button>
+              </p>
+            </td>
+            <td class="swap">
+              <%= item.swap %>
+            </td>
+            <td class="commission">
+              <%= item.commission %>
+            </td>
+            <td class="date">
+              <p>
+                <%= item.openTime %>
+
+
+              </p>
+            </td>
+
+            <td class="action"  align="center">
+              <span class="J_Action" data-symbol="<%= item.symbol.replace(/\./g, '--') %>" data-id="<%= item.ticket %>">平仓</span>
+            </td>
+            <!-- <td class="action share"  align="center">
+              <span class="J_Share share" data-symbol="<%= item.symbol.replace(/\./g, '--') %>" data-id="<%= item.ticket %>">分享</span>
+            </td> -->
+          </tr>
+        <%}%>
+      <%}%>
+    <%})%>
+<%}%>

@@ -1,0 +1,21 @@
+<% data.forEach((item, index) => {%>
+	<tr class="user-follow J_UserFollow" data-id='<%= item.id %>'>
+		<td class="tradelist-user">
+			<div class="img-wrapper-outer">
+				<div class="img-wrapper">
+					<img class="img" src="<%= item.img %>">
+				</div>
+			</div>
+			<span class="name"><%= item.name %></span>
+		</td>
+		<td class="tradelist-chart chart_index_<%= index %> J_TradelistChart"></td>
+		<td class="tradelist-profit">
+			<p class="profit"><%= parseFloat(item.yield_rate).toFixed(2) %> %</p>
+		</td>
+	</tr>
+
+<%})%>
+
+<% if(data.length === 0) {%>
+	<tr class="no-list"><td>当前没有订单</td></tr>
+<%}%>

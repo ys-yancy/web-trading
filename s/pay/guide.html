@@ -1,0 +1,240 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>支付引导页</title>
+    <meta charset="utf-8">
+    <meta name="keyword" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <link rel="shortcut icon" href="../../resources/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../src/p/pay/guide/index.css">
+    <script src="../../resources/r.js"></script>
+</head>
+
+<body>
+    <div class="order-bg"></div>
+    <div class="header payHeader" id="J_Header">
+        <div class="header-inner">
+           
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-inner">
+            <h2>请选择付款银行：</h2>
+            <ul class="clearfix">
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <!--
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                -->
+                <!-- <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link"></a>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="order">
+        <div class="order-inner ">
+            <div class="title-wrapper">
+                <span class="title">生成订单</span>
+                <span class="closeOrder"></span>
+            </div>
+            <form id="J_Form" target="_blank" method="post">
+                <!-- <p class="title">生成订单</p> -->
+                <ul>
+                    <li class="item">
+                        <div class="wrapper ">
+                            <input type="text" class="first company-name" readonly tabIndex="-1"  value="">
+                        </div>
+                    </li>
+                    <!-- <li class="item">
+                        <div class="info">姓<span class="space">名：</span></div>
+                        <div class="wrapper">
+                            <input type="text" class="username" value="" placeholder="请输入付款人姓名">
+                        </div>
+                    </li> -->
+                    <li class="item">
+                        <div class="wrapper">
+                            <input type="text" class="phone"  tabIndex="-1"   placeholder="请输入绑定付款银行卡的手机号">
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="wrapper">
+                            <input type="text" class="num" value="" placeholder="请输入金额 单笔最低500美元 最高30000,美元">
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="wrapper J_BonusWrapper">
+                            <input type="text" class="extra-money" readonly value="" placeholder="自动计算赠金">
+                        </div>
+                        <div class="detail" id="J_Bonus">
+
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="info"></div>
+                        <div class="wrapper">
+                            <input type="submit" class="submit" value="生成订单" style="text-decoration: none">
+                        </div>
+                    </li>
+                    <li class="item last">
+                        <div class="info"></div>
+                        <div class="wrapper">
+                            <p class="statement">
+                                <input type="checkbox" name="demo" class="check" checked="checked"></input> <a class="statement statement-link" href="./statement.html">我已阅读并同意《用户注册协议》</a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </form>
+            <div class="extra">
+                <!-- <h2>温馨提示</h2>
+                <p>1.不接受任何第三者付款。 </p>
+                <p>2.充值金额将按中国对应银行实时给出的汇率转为美元。</p>
+                <p class="factorage">3.入金手续费：豁免。</p>
+                <p>4.存款客户姓名必须与中国银联卡持卡人姓名相同，前述资料的任何差异都可能造成您的交易被拒绝。</p>
+                <p>5.交易完成后，请保留交易编号作为备档。</p>
+                <p>6.通常在收到客户款项后15分钟内存入客户交易账户。</p>
+                <p>7.交易结算只限使用银联卡。</p>
+                <p>8.每次最低交易金额为500美元，每次最高交易金额为30,000美元。</p> -->
+            </div>
+
+        </div>
+    </div>
+    <form method="post" target="_blank" id="J_Charge">
+
+    </form>
+    <div class="footer" style="display: none">
+        <div class="footer-inner">
+            <ul class="clearfix">
+                 <li><a class="link" href="http://www.invhero.com/download.php" target="_blank">下载APP</a></li>
+                <li class="slash"></li>
+                <li><a class="link" href="http://www.invhero.com/about.php" target="_blank">关于我们</a></li>
+                <li class="slash"></li>
+                <li><a class="link" href="http://www.invhero.com/contact_us.php" target="_blank">联系我们</a></li>
+                <li class="slash"></li>
+                <li><a class="link" href="http://www.jobtong.com/e/4714" target="_blank">职位招聘</a></li>
+                <li class="slash"></li>
+                <li><a class="link long" href="http://www.invhero.com/" target="_blank">意见与反馈</a></li>
+                <li class="slash"></li>
+                <li><a class="link" href="http://www.invhero.com/business.php" target="_blank">商务合作</a></li>
+            </ul>
+            <div class="copyright">Copyright © 2015 Invhero.com</div>
+        </div>
+    </div>
+    <script src="../../src/lib/lib.min.js"></script>
+    <script src="../../build/guide.js"></script>
+
+</body>
+
+</html>

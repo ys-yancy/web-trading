@@ -1,0 +1,179 @@
+//@import '../../variable.less';
+.dialog-exit {
+    .dialog-bd {
+        position: relative;
+        padding-top: 24px;
+        p {
+            line-height: 30px;
+            font-size: 0.75rem;
+            color: #5a5a5a;
+            margin-left: 140px;
+        }
+        .icon {
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 60px;
+            width: 50px;
+            height: 42px;
+            /*background: url(../../../../img/warn-icon.png) 0 0 no-repeat;*/
+        }
+    }
+    .dialog-ft {
+        padding-top: 36px;
+        padding-bottom: 32px;
+        text-align: center;
+        a {
+            width: 108px;
+            height: 40px;
+            line-height: 40px;
+            display: inline-block;
+            font-size: 14px;
+            text-decoration: none;
+            background: #3AB9E6;
+            color: #fff;
+            // box-shadow: 3px 2px 3px #dadada;
+            &.submit {
+                margin-left: 36px;
+                border-color: #9A9A9A;
+                background: #9A9A9A;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.header{
+  font-size: 0px;
+  min-height: 68px;
+  min-width: 750px;
+  background: #384655;
+  .account-wrapper{ 
+    display: inline-block;
+    width: auto;
+    background:#384655;
+    padding-left: 10px;
+    .item{
+      display: inline-block;   
+      //width: 9%;
+      width: 200px;
+      margin: 0 auto;
+      height: 60px;
+      color: #fff;
+      font-size: 1rem;
+      padding-top: 2px;
+      text-align: left;
+      vertical-align: bottom;
+      .desc{
+        margin-top: 5px;
+      }
+      span{
+        margin-top: 3px;
+        display: inline-block;
+      }
+      .name{
+        font-size: 0.75rem;
+      }
+      &.float-profit{
+        &.up{
+          span{
+            color: #D75442;
+          } 
+        }
+        &.zero{
+          span{
+            color: #6BA583;
+          } 
+        }
+      }
+      &.account{
+        text-align: left;
+        width: 300px;
+        //width:14%;
+        .img-wrapper-outer{
+          width:60px;
+          height: 60px;
+          margin-top: 5px;
+          margin-right: 15px;
+          border-radius: 50%;
+          float: left;
+          background: #000;
+          .img-wrapper{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            .img{
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+        .name, .phone{
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        .name{
+           font-size: 1rem;
+          margin-top: 8px;
+        }
+        .phone{
+          font-size: 0.75rem;
+         }
+      }
+      &.extract, &.recharge{
+        width: 21%;
+        float: right;
+        a{
+          float: right;
+          width: 40%;
+          height: 22px;
+          line-height: 22px;
+          margin-top: 12px;
+          color: #fff;
+          font-size: 14px;
+          text-decoration: none;
+          border: 1px solid #3AB8E6;
+          display: inline-block;
+          text-align: center;
+          &.recharge{
+            background: #3AB8E6;
+            margin-right: 10px;
+          }
+          &.extract{
+            color: #59C2E6;
+            background: inherit;
+            margin-right: 11px;
+          }
+        }
+      }
+    }
+  }
+  .other{
+    float: right;
+    height: 68px;
+    //border: 1px solid white;
+    font-size: 16px;
+    line-height: 68px;
+    color:#A1A1A1;;
+    padding-right: 5px;
+    cursor:pointer;
+  }
+  .exit-wrapper{
+    width: auto;
+    height: 50px;
+    float: right;
+    font-size: 16px;
+    color: #A1A1A1;
+    text-align: right;
+    line-height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    .ext{
+      letter-spacing: 3px;
+      cursor: pointer;
+    }
+  }
+}

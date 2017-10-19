@@ -1,0 +1,24 @@
+<div class="hd">
+  <h2>平仓订单</h2>
+</div>
+<div class="bd">
+  <ul>
+    <li>编号：<%= data.ticket %></li>
+    <li>操作：<%= data.cmd == 'buy' ? '买涨' : '买跌' %> <%= data.cmd %></li>
+    <li>平仓：<%= data.price %></li>
+    <li class="red">利润：<%= parseFloat(data.profit).toFixed(2) %></li>
+  </ul>
+</div>
+<div class="ft">
+  <!-- <span class="radio-wrapper J_Radio <%= data.openOneKey ? 'active': '' %>">
+    <span class="radio">
+      <span class="radio-inner"></span>
+    </span>
+  </span>
+  <span class="desc">开启一键平仓</span>
+  <span class="extra">(可在设置中取消）</span> -->
+  <div class="btn-wrapper">
+    <button class="confirm J_Confirm">确认</button>
+    <button class="cancel disable J_Close">取消</button>
+  </div>
+</div>
